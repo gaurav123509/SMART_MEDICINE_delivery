@@ -1,0 +1,547 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0f1111;
+  --brand: #febd69;
+  --brand-dark: #f3a847;
+  --navy: #131921;
+  --navy-2: #232f3e;
+  --accent: #007185;
+  --surface: #ffffff;
+  --muted: #565959;
+  --line: #d5d9d9;
+  --page: #e3e6e6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(14, 165, 164, 0.1), transparent 34%),
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.08), transparent 32%),
+    var(--page);
+}
+
+a {
+  text-decoration: none;
+}
+
+.market-shell {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 14px;
+}
+
+.surface-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(15, 17, 17, 0.08);
+}
+
+.deal-badge {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #cc0c39;
+  color: #ffffff;
+}
+
+.amazon-link {
+  color: var(--accent);
+}
+
+.amazon-link:hover {
+  color: #c7511f;
+  text-decoration: underline;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.4s ease-out;
+}
+
+@keyframes introCard {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes introLineLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes introLineRight {
+  from {
+    opacity: 0;
+    transform: translateX(45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes introUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introGlow {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes introBgShift {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+    filter: saturate(1);
+  }
+  100% {
+    transform: scale(1.04) translate3d(0, -6px, 0);
+    filter: saturate(1.08);
+  }
+}
+
+@keyframes introText {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introParticleFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.7);
+  }
+  20% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-32px) scale(1.05);
+  }
+}
+
+@keyframes introRingSlow {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+    opacity: 0.45;
+  }
+}
+
+@keyframes introRingReverse {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(-50%) rotate(-360deg);
+    opacity: 0.4;
+  }
+}
+
+@keyframes introBeam {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px) rotate(-14deg);
+  }
+  40% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(42px) rotate(-14deg);
+  }
+}
+
+@keyframes introBeamDelayed {
+  0% {
+    opacity: 0;
+    transform: translateX(24px) rotate(10deg);
+  }
+  35% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-36px) rotate(10deg);
+  }
+}
+
+@keyframes introCardSheen {
+  0% {
+    transform: translateX(-180px) rotate(12deg);
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(820px) rotate(12deg);
+    opacity: 0;
+  }
+}
+
+@keyframes introTitlePulse {
+  0% {
+    text-shadow: 0 0 0 rgba(14, 116, 144, 0);
+  }
+  50% {
+    text-shadow: 0 6px 24px rgba(14, 116, 144, 0.22);
+  }
+  100% {
+    text-shadow: 0 0 0 rgba(14, 116, 144, 0);
+  }
+}
+
+@keyframes introProgress {
+  0% {
+    width: 0%;
+    opacity: 0.8;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.animate-intro-card {
+  animation: introCard 0.65s ease-out;
+}
+
+.animate-intro-line-left {
+  animation: introLineLeft 0.55s ease-out;
+}
+
+.animate-intro-line-left-delayed {
+  animation: introLineLeft 0.65s ease-out 0.1s both;
+}
+
+.animate-intro-line-right {
+  animation: introLineRight 0.7s ease-out 0.15s both;
+}
+
+.animate-intro-up {
+  animation: introUp 0.75s ease-out;
+}
+
+.animate-intro-glow {
+  animation: introGlow 1.6s ease-out forwards;
+}
+
+.animate-intro-bg-shift {
+  animation: introBgShift 2.6s ease-out forwards;
+}
+
+.animate-intro-text-delay-1 {
+  animation: introText 0.5s ease-out 0.12s both;
+}
+
+.animate-intro-text-delay-2 {
+  animation: introText 0.55s ease-out 0.2s both;
+}
+
+.animate-intro-text-delay-3 {
+  animation: introText 0.6s ease-out 0.3s both;
+}
+
+.animate-intro-text-delay-4 {
+  animation: introText 0.65s ease-out 0.42s both;
+}
+
+.animate-intro-particle-float {
+  animation: introParticleFloat 4.8s ease-in-out infinite;
+}
+
+.animate-intro-ring-slow {
+  animation: introRingSlow 18s linear infinite;
+}
+
+.animate-intro-ring-reverse {
+  animation: introRingReverse 14s linear infinite;
+}
+
+.animate-intro-beam {
+  animation: introBeam 2.2s ease-in-out 0.25s infinite;
+}
+
+.animate-intro-beam-delayed {
+  animation: introBeamDelayed 2.35s ease-in-out 0.45s infinite;
+}
+
+.animate-intro-card-sheen {
+  animation: introCardSheen 2.6s ease-in-out 0.5s infinite;
+}
+
+.animate-intro-title-pulse {
+  animation: introTitlePulse 1.8s ease-in-out infinite;
+}
+
+.animate-intro-progress {
+  animation: introProgress 2.5s linear forwards;
+}
+
+@keyframes introV2Bg {
+  0% {
+    transform: scale(1) translateY(0);
+    filter: saturate(1);
+  }
+  100% {
+    transform: scale(1.04) translateY(-4px);
+    filter: saturate(1.08);
+  }
+}
+
+@keyframes introV2Frame {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes introV2LineLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes introV2LineRight {
+  from {
+    opacity: 0;
+    transform: translateX(48px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes introV2DoctorUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introV2Title {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+    letter-spacing: 0.02em;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0;
+  }
+}
+
+@keyframes introV2FadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introV2BandUp {
+  from {
+    opacity: 0;
+    transform: translateY(34px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introV2Sheen {
+  0% {
+    transform: translateX(0) rotate(12deg);
+    opacity: 0;
+  }
+  18% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(1280px) rotate(12deg);
+    opacity: 0;
+  }
+}
+
+@keyframes introV2Progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes introV2LeftGlow {
+  0% {
+    opacity: 0.55;
+    transform: translateX(-8px);
+  }
+  100% {
+    opacity: 0.9;
+    transform: translateX(6px);
+  }
+}
+
+.animate-intro-v2-bg {
+  animation: introV2Bg 2.7s ease-out forwards;
+}
+
+.animate-intro-v2-frame {
+  animation: introV2Frame 0.65s ease-out;
+}
+
+.animate-intro-v2-line-left {
+  animation: introV2LineLeft 0.5s ease-out;
+}
+
+.animate-intro-v2-line-left-delay {
+  animation: introV2LineLeft 0.58s ease-out 0.1s both;
+}
+
+.animate-intro-v2-line-right {
+  animation: introV2LineRight 0.62s ease-out 0.14s both;
+}
+
+.animate-intro-v2-doctor-up {
+  animation: introV2DoctorUp 0.62s ease-out 0.2s both;
+}
+
+.animate-intro-v2-title {
+  animation: introV2Title 0.62s ease-out 0.25s both;
+}
+
+.animate-intro-v2-fade-up {
+  animation: introV2FadeUp 0.45s ease-out 0.1s both;
+}
+
+.animate-intro-v2-fade-up-delay {
+  animation: introV2FadeUp 0.5s ease-out 0.4s both;
+}
+
+.animate-intro-v2-fade-up-delay-2 {
+  animation: introV2FadeUp 0.58s ease-out 0.52s both;
+}
+
+.animate-intro-v2-fade-up-delay-3 {
+  animation: introV2FadeUp 0.62s ease-out 0.64s both;
+}
+
+.animate-intro-v2-band-up {
+  animation: introV2BandUp 0.7s ease-out 0.35s both;
+}
+
+.animate-intro-v2-sheen {
+  animation: introV2Sheen 2.3s ease-in-out 0.4s infinite;
+}
+
+.animate-intro-v2-progress {
+  animation: introV2Progress 2.5s linear forwards;
+}
+
+.animate-intro-v2-left-glow {
+  animation: introV2LeftGlow 1.5s ease-in-out infinite alternate;
+}
+
+@media (max-width: 768px) {
+  .market-shell {
+    padding: 0 10px;
+  }
+}
