@@ -1,3 +1,4 @@
+import re
 import requests
 from flask import Blueprint, jsonify, request
 
@@ -5,6 +6,10 @@ from config import Config
 from db import get_connection
 
 support = Blueprint('support', __name__)
+
+
+def _is_valid_phone(phone):
+    return bool(re.fullmatch(r'[6-9]\d{9}', (phone or '').strip()))
 
 
 def _build_catalog_context(limit=60):
@@ -123,3 +128,65 @@ def support_chat():
         return jsonify({'ok': True, 'reply': reply, 'provider': 'groq', 'used_fallback': False})
     except Exception:
         return jsonify({'ok': True, 'reply': _fallback_reply(message), 'provider': 'fallback', 'used_fallback': True})
+
+
+def _create_support_request(request_type, full_name, phone, preferred_time='', notes=''):
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute(
+        """
+        INSERT INTO support_requests (request_type, full_name, phone, preferred_time, notes, status)
+        VALUES (?, ?, ?, ?, ?, 'pending')
+        """,
+        (request_type, full_name, phone, preferred_time, notes),
+    )
+    request_id = cur.lastrowid
+    conn.commit()
+    conn.close()
+    return request_id
+
+
+@support.route('/schedule-advice', methods=['POST'])
+def schedule_advice():
+    data = request.get_json() or {}
+    full_name = (data.get('full_name') or '').strip()
+    phone = (data.get('phone') or '').strip()
+    preferred_time = (data.get('preferred_time') or '').strip()
+    notes = (data.get('notes') or '').strip()
+
+    if not full_name:
+        return jsonify({'ok': False, 'message': 'full_name is required'}), 400
+    if not _is_valid_phone(phone):
+        return jsonify({'ok': False, 'message': 'valid 10 digit phone is required'}), 400
+
+    request_id = _create_support_request('schedule_advice', full_name, phone, preferred_time, notes)
+    return jsonify(
+        {
+            'ok': True,
+            'message': 'Advice schedule request submitted. Our team will contact you shortly.',
+            'request_id': request_id,
+        }
+    )
+
+
+@support.route('/walkin-booking', methods=['POST'])
+def walkin_booking():
+    data = request.get_json() or {}
+    full_name = (data.get('full_name') or '').strip()
+    phone = (data.get('phone') or '').strip()
+    preferred_time = (data.get('preferred_time') or '').strip()
+    notes = (data.get('notes') or '').strip()
+
+    if not full_name:
+        return jsonify({'ok': False, 'message': 'full_name is required'}), 400
+    if not _is_valid_phone(phone):
+        return jsonify({'ok': False, 'message': 'valid 10 digit phone is required'}), 400
+
+    request_id = _create_support_request('walkin_booking', full_name, phone, preferred_time, notes)
+    return jsonify(
+        {
+            'ok': True,
+            'message': 'Walk-in booking request submitted. We will share your slot details soon.',
+            'request_id': request_id,
+        }
+    )

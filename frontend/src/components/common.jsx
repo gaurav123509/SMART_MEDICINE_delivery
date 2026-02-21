@@ -18,11 +18,60 @@ const readAuthState = () => {
   };
 };
 
+const MEDICINE_PLACEHOLDER = '/medicine-placeholder.svg';
+
+const buildCompoundImageUrl = (name) => {
+  const safe = (name || '').trim().toLowerCase();
+  const aliasMap = {
+    dolo: 'paracetamol',
+    crocin: 'paracetamol',
+    calpol: 'paracetamol',
+    'vitamin c': 'ascorbic acid',
+    'vitamin d3': 'cholecalciferol',
+    zincovit: 'zinc sulfate',
+    ors: 'oral rehydration salts',
+  };
+  const queryName = encodeURIComponent(aliasMap[safe] || safe || 'medicine');
+  return `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${queryName}/PNG?image_size=large`;
+};
+
+export const MedicineImage = ({ medicine, className, alt, loading = 'lazy' }) => {
+  const candidates = React.useMemo(() => {
+    const list = [
+      (medicine?.image_url || '').trim(),
+      buildCompoundImageUrl(medicine?.name),
+      MEDICINE_PLACEHOLDER,
+    ];
+    return list.filter((value, index) => value && list.indexOf(value) === index);
+  }, [medicine?.image_url, medicine?.name]);
+  const [index, setIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    setIndex(0);
+  }, [candidates]);
+
+  const src = candidates[Math.min(index, candidates.length - 1)] || MEDICINE_PLACEHOLDER;
+
+  return (
+    <img
+      src={src}
+      alt={alt || medicine?.name || 'Medicine image'}
+      className={className}
+      loading={loading}
+      referrerPolicy="no-referrer"
+      onError={() => {
+        setIndex((current) => (current < candidates.length - 1 ? current + 1 : current));
+      }}
+    />
+  );
+};
+
 export const Header = ({ userType = 'customer', userName = null, onLogout }) => {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [cartCount, setCartCount] = React.useState(getCartCount());
   const [headerQuery, setHeaderQuery] = React.useState('');
   const [auth, setAuth] = React.useState(readAuthState());
+  const [deliveryLabel, setDeliveryLabel] = React.useState(localStorage.getItem('deliveryLocationLabel') || 'Noida 201301');
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -53,6 +102,19 @@ export const Header = ({ userType = 'customer', userName = null, onLogout }) => 
     };
   }, [location.pathname]);
 
+  React.useEffect(() => {
+    const syncDelivery = () => {
+      setDeliveryLabel(localStorage.getItem('deliveryLocationLabel') || 'Noida 201301');
+    };
+    syncDelivery();
+    window.addEventListener('storage', syncDelivery);
+    window.addEventListener('delivery-location-updated', syncDelivery);
+    return () => {
+      window.removeEventListener('storage', syncDelivery);
+      window.removeEventListener('delivery-location-updated', syncDelivery);
+    };
+  }, []);
+
   const handleHeaderSearch = (e) => {
     e.preventDefault();
     const q = headerQuery.trim();
@@ -78,6 +140,25 @@ export const Header = ({ userType = 'customer', userName = null, onLogout }) => 
     }
 
     navigate('/login');
+  };
+
+  const handleDeliverToClick = () => {
+    if (!navigator.geolocation) {
+      navigate('/home');
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        const nextLabel = `${coords.latitude.toFixed(2)}, ${coords.longitude.toFixed(2)}`;
+        localStorage.setItem('deliveryLocationLabel', nextLabel);
+        window.dispatchEvent(new Event('delivery-location-updated'));
+        navigate('/home');
+      },
+      () => {
+        navigate('/home');
+      }
+    );
   };
 
   const accountRoute = auth.isLoggedIn
@@ -106,13 +187,17 @@ export const Header = ({ userType = 'customer', userName = null, onLogout }) => 
             </div>
           </Link>
 
-          <div className="hidden lg:flex items-center text-white text-sm gap-2 shrink-0 border border-transparent hover:border-white px-2 py-1 rounded">
+          <button
+            type="button"
+            onClick={handleDeliverToClick}
+            className="hidden lg:flex items-center text-white text-sm gap-2 shrink-0 border border-transparent hover:border-white px-2 py-1 rounded"
+          >
             <MapPin className="w-4 h-4" />
             <div>
               <p className="text-[11px] text-slate-300 leading-none">Deliver to</p>
-              <p className="font-bold leading-none mt-1">Noida 201301</p>
+              <p className="font-bold leading-none mt-1">{deliveryLabel}</p>
             </div>
-          </div>
+          </button>
 
           <form onSubmit={handleHeaderSearch} className="flex-1">
             <div className="bg-white rounded-md overflow-hidden border-2 border-transparent focus-within:border-[var(--brand)] flex h-10">
@@ -273,26 +358,25 @@ export const MedicineCard = ({ medicine, onAddToCart }) => {
     ? Number(medicine.offer_percent)
     : (mrp > 0 ? Math.round(((mrp - price) / mrp) * 100) : 0);
   const offerText = medicine.offer_text || (offPercent > 0 ? `${offPercent}% OFF` : 'Best Price');
-  const imageUrl = medicine.image_url || '/medicine-placeholder.svg';
-
   return (
     <Card className="group hover:shadow-lg transition animate-rise rounded-lg">
       <div className="deal-badge inline-block mb-3">{offerText}</div>
-      <div className="w-full h-36 rounded-md bg-slate-100 overflow-hidden flex items-center justify-center mb-3">
-        <img
-          src={imageUrl}
-          alt={medicine.name}
-          className="h-full w-full object-cover"
-          loading="lazy"
-          onError={(e) => {
-            e.currentTarget.src = '/medicine-placeholder.svg';
-          }}
-        />
-      </div>
-      <h3 className="font-extrabold text-slate-900 text-lg leading-tight min-h-[54px]">{medicine.name}</h3>
+      <Link to={`/medicine/${medicine.id}`} className="block">
+        <div className="w-full h-36 rounded-md bg-slate-100 overflow-hidden flex items-center justify-center mb-3">
+          <MedicineImage
+            medicine={medicine}
+            className="h-full w-full object-cover"
+            alt={medicine.name}
+          />
+        </div>
+        <h3 className="font-extrabold text-slate-900 text-lg leading-tight min-h-[54px] hover:underline">{medicine.name}</h3>
+      </Link>
       <p className="text-slate-500 text-sm mt-1">
         {medicine.strength || 'General'} • {medicine.unit || 'unit'}
       </p>
+      {medicine.use_for && (
+        <p className="text-xs text-slate-600 mt-1">{medicine.use_for}</p>
+      )}
       <p className="text-xs text-slate-500 mt-2">Sold by: {medicine.pharmacy_name || 'Nearby Pharmacy'}</p>
 
       <div className="flex items-end gap-2 mt-4">
@@ -305,10 +389,14 @@ export const MedicineCard = ({ medicine, onAddToCart }) => {
         {medicine.available ? 'In stock • Delivery by today' : 'Out of stock'}
       </p>
 
+      <Link to={`/medicine/${medicine.id}`} className="block mt-3 text-xs font-bold amazon-link">
+        View details
+      </Link>
+
       <Button
         variant="primary"
         size="md"
-        className="w-full mt-4 rounded-full"
+        className="w-full mt-3 rounded-full"
         onClick={() => onAddToCart(medicine)}
         disabled={!medicine.available}
       >

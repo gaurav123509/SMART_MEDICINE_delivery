@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Header, Footer, Button, Card } from '../components/common';
+import { Header, Footer, Button, Card, MedicineImage } from '../components/common';
 import { Trash2, Plus, Minus, ShieldCheck, Clock3, Zap, Truck } from 'lucide-react';
 import { getCartItems, setCartItems } from '../utils/cart';
 import { getDiscountedUnitPrice, getLineDiscountAmount, getLineTotal, getQuantityDiscountPercent } from '../utils/pricing';
@@ -93,14 +93,10 @@ export const CartPage = () => {
                   <Card key={item.id} className="mb-4 p-4 md:p-5">
                     <div className="flex flex-col md:flex-row gap-4 md:items-center">
                       <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg bg-slate-100 border border-slate-200 overflow-hidden shrink-0">
-                        <img
-                          src={item.image_url || '/medicine-placeholder.svg'}
+                        <MedicineImage
+                          medicine={item}
                           alt={item.name}
                           className="w-full h-full object-cover"
-                          loading="lazy"
-                          onError={(e) => {
-                            e.currentTarget.src = '/medicine-placeholder.svg';
-                          }}
                         />
                       </div>
 

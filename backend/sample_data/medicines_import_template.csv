@@ -1,199 +1,316 @@
 pharmacy_id,name,strength,unit,price,mrp,offer_text,image_url,available,stock_qty
-1,"Alcohol Swabs","",unit,137.0,164.4,"17% OFF",https://images.unsplash.com/photo-1583947581924-860bda6a26df?w=500,1,60
-1,"Anti-Fungal Cream","",pack,208.0,249.6,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,80
-1,"Antibiotic Ointment","",unit,117.5,141.0,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,110
-1,"Antifungal Cream","",unit,130.5,156.6,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,70
-1,"Baby Diapers","",unit,210.0,252.0,"17% OFF",https://images.unsplash.com/photo-1616671285390-34907149a407?w=500,1,40
-1,"Baby Food Cereal","",unit,223.0,267.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,73
-1,"Baby Lotion","",unit,249.0,298.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,100
-1,"Baby Napkins","",unit,262.0,314.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,60
-1,"Baby Oil","",unit,229.5,275.4,"17% OFF",https://images.unsplash.com/photo-1611073100829-8739775073c6?w=500,1,70
-1,"Baby Rash Cream","",unit,268.5,322.2,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,50
-1,"Baby Soft Towels","",unit,236.0,283.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,40
-1,"Baby Sunscreen","",unit,216.5,259.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,90
-1,"Baby Thermometer","",unit,242.5,291.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,110
-1,"Baby Vitamin Drops","",unit,255.5,306.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,70
-1,Bandages,"",unit,85.0,102.0,"17% OFF",https://images.unsplash.com/photo-1583947581924-860bda6a26df?w=500,1,40
-1,"Burn Cream","",unit,124.0,148.8,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,100
-1,"Burn Ointment","",strip,71.0,85.2,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,40
-1,"Calcium + D3 Combo","",bottle,225.5,270.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,70
-1,Conditioner,"",unit,159.5,191.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,70
-1,"Cotton Roll","",strip,58.0,69.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,80
-1,Crocin,650mg,strip,34.0,40.8,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,90
-1,Deodorant,"",unit,172.5,207.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,110
-1,"Disposable Gloves","",unit,143.5,172.2,"17% OFF",https://images.unsplash.com/photo-1583947581924-860bda6a26df?w=500,1,50
-1,Dolo,650mg,strip,30.0,36.0,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,119
-1,"Energy Booster Capsules","",bottle,238.5,286.2,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,50
-1,"Face Cream","",unit,179.0,214.8,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,100
-1,"Face Wash","",unit,140.0,168.0,"17% OFF",https://images.unsplash.com/photo-1550573104-4eb8261407d5?w=500,1,40
-1,"Fairness Cream","",unit,185.5,222.6,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,70
-1,"Fever Patch","",strip,51.5,61.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,90
-1,"First Aid Box","",unit,91.5,109.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,90
-1,"Folic Acid Tablets","",pack,234.0,280.8,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,100
-1,"Gelusil Syrup","",strip,84.0,100.8,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,100
-1,"Hair & Skin Vitamins","",bottle,212.5,255.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,110
-1,"Hair Color","",unit,146.5,175.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,90
-1,"Hand Sanitizer","",unit,111.0,133.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,40
-1,"Herbal Supplements","",bottle,186.5,223.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,90
-1,"Hot Water Bag","",strip,97.0,116.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,60
-1,Ibuprofen,200mg,strip,35.0,42.0,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,150
-1,"Ice Pack","",unit,98.0,117.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,80
-1,"Iron Syrup","",pack,227.5,273.0,"17% OFF",https://images.unsplash.com/photo-1550573104-4eb8261407d5?w=500,1,110
-1,"Iron Tablets","",bottle,219.0,262.8,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,100
-1,"Kids Multivitamins","",bottle,232.0,278.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,60
-1,Levocetirizine,5mg,strip,38.0,48.0,"21% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,90
-1,"Lip Balm","",unit,198.5,238.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,50
-1,"Magnesium Tablets","",bottle,193.0,231.6,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,80
-1,"Medical Tape","",unit,104.5,125.4,"17% OFF",https://images.unsplash.com/photo-1583947581924-860bda6a26df?w=500,1,70
-1,Mouthwash,"",unit,153.0,183.6,"17% OFF",https://images.unsplash.com/photo-1550573104-4eb8261407d5?w=500,1,80
-1,"Multivitamin Tablets","",bottle,199.5,239.4,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,70
-1,"Muscle Relaxant Tablet","",strip,90.5,108.6,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,70
-1,"Nasal Drops","",strip,103.5,124.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,50
-1,"ORS Sachets","",strip,64.5,77.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,70
-1,"Pain Relief Gel","",pack,221.0,265.2,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,40
-1,Paracetamol,500mg,strip,20.0,24.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,191
-1,Paracetamol,650mg,strip,24.0,30.0,"20% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,180
-1,"Paracetamol 500mg","",strip,45.0,54.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,40
-1,"Period Pain Relief Tablets","",pack,214.5,257.4,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,70
-1,"Postnatal Supplements","",pack,253.5,304.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,50
-1,"Probiotic Capsules","",bottle,206.0,247.2,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,40
-1,Razor,"",unit,192.0,230.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,60
-1,"Sanitary Pads","",pack,195.0,234.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,40
-1,"Savlon Liquid","",strip,77.5,93.0,"17% OFF",https://images.unsplash.com/photo-1550573104-4eb8261407d5?w=500,1,110
-1,"Stretch Mark Cream","",pack,247.0,296.4,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,60
-1,"Urinary Health Tablets","",pack,201.5,241.8,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,90
-1,"Vitamin C Tablets","",bottle,180.0,216.0,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,40
-1,"Vitamin D3 Capsules","",pack,240.5,288.6,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,70
-1,"Wet Wipes","",unit,166.0,199.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,40
-2,"After Shave Lotion","",unit,198.5,238.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,70
-2,"Antacid Gel","",strip,71.0,85.2,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,80
-2,"Antihistamine Tablet","",strip,97.0,116.4,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,80
-2,"Antiseptic Cream","",unit,111.0,133.2,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,80
-2,Azithromycin,250mg,strip,95.0,114.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,60
-2,"Baby Cotton","",unit,268.5,322.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,70
-2,"Baby Face Cream","",unit,242.5,291.0,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,50
-2,"Baby Feeding Bottle","",unit,255.5,306.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,110
-2,"Baby Herbal Oil","",unit,262.0,314.4,"17% OFF",https://images.unsplash.com/photo-1611073100829-8739775073c6?w=500,1,80
-2,"Baby Massage Oil","",unit,249.0,298.8,"17% OFF",https://images.unsplash.com/photo-1611073100829-8739775073c6?w=500,1,40
-2,"Baby Milk Formula","",unit,229.5,275.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,90
-2,"Baby Nail Scissors","",unit,223.0,267.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,100
-2,"Baby Shampoo","",unit,236.0,283.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,80
-2,"Baby Toothbrush","",unit,210.0,252.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,60
-2,"Baby Wipes","",unit,216.5,259.8,"17% OFF",https://images.unsplash.com/photo-1616671285390-34907149a407?w=500,1,50
-2,"Band-Aid Strips","",strip,64.5,77.4,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,90
-2,"Body Lotion","",unit,192.0,230.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,80
-2,"Body Wash","",unit,146.5,175.8,"17% OFF",https://images.unsplash.com/photo-1550573104-4eb8261407d5?w=500,1,50
-2,"Breast Care Cream","",pack,234.0,280.8,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,40
-2,"Calcium + Iron Combo","",pack,247.0,296.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,80
-2,Calpol,500mg,strip,26.0,31.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,110
-2,Cetirizine,10mg,strip,28.0,33.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,140
-2,"Cotton Pads","",unit,91.5,109.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,50
-2,"Crepe Bandage","",unit,124.0,148.8,"17% OFF",https://images.unsplash.com/photo-1583947581924-860bda6a26df?w=500,1,40
-2,"Crocin Advance","",strip,51.5,61.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,50
-2,"Eye Drops (Lubricant)","",strip,58.0,69.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,100
-2,"Face Masks","",unit,85.0,102.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,60
-2,"Facial Tissues","",unit,172.5,207.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,50
-2,"Fertility Supplements","",pack,227.5,273.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,50
-2,"Finger Bandage","",unit,98.0,117.6,"17% OFF",https://images.unsplash.com/photo-1583947581924-860bda6a26df?w=500,1,100
-2,"Folic Acid Tablets","",bottle,199.5,239.4,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,90
-2,"Glucose Powder","",strip,103.5,124.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,70
-2,"Hair Oil","",unit,166.0,199.2,"17% OFF",https://images.unsplash.com/photo-1611073100829-8739775073c6?w=500,1,80
-2,"Hand Sanitizer","",strip,84.0,100.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,40
-2,"Hand Wash","",unit,159.5,191.4,"17% OFF",https://images.unsplash.com/photo-1550573104-4eb8261407d5?w=500,1,90
-2,"Headache Balm","",strip,77.5,93.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,50
-2,"Immunity Booster Syrup","",bottle,180.0,216.0,"17% OFF",https://images.unsplash.com/photo-1550573104-4eb8261407d5?w=500,1,60
-2,"Iron Syrup","",bottle,232.0,278.4,"17% OFF",https://images.unsplash.com/photo-1550573104-4eb8261407d5?w=500,1,80
-2,"Iron Tablets","",pack,221.0,265.2,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,80
-2,"Joint Health Supplements","",bottle,219.0,262.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,40
-2,"Lactation Support Capsules","",pack,253.5,304.2,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,70
-2,"Medical Scalpels","",unit,137.0,164.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,80
-2,"Menstrual Cups","",pack,201.5,241.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,50
-2,Metformin,500mg,strip,48.0,60.0,"20% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,199
-2,Moisturizer,"",unit,185.5,222.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,110
-2,"Nail Cutter","",unit,153.0,183.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,100
-2,"ORS Packets","",unit,143.5,172.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,70
-2,"Omega-3 Capsules","",bottle,225.5,270.6,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,110
-2,Omeprazole,20mg,strip,62.0,78.0,"20% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,120
-2,"PCOS Supplements","",pack,214.5,257.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,90
-2,"Pain Relief Spray","",strip,45.0,54.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,60
-2,"Pain Relief Spray","",unit,104.5,125.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,90
-2,Pantoprazole,40mg,strip,85.0,102.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,80
-2,Perfume,"",unit,179.0,214.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,40
-2,"Pregnancy Test Kit","",pack,240.5,288.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,110
-2,"Safety Pins","",unit,117.5,141.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,50
-2,"Scissors (Medical)","",unit,130.5,156.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,110
-2,"Senior Citizen Multivitamins","",bottle,238.5,286.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,70
-2,Toothpaste,"",unit,140.0,168.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,60
-2,"Vaginal Infection Tablets","",pack,208.0,249.6,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,100
-2,"Vaginal Wash","",pack,195.0,234.0,"17% OFF",https://images.unsplash.com/photo-1550573104-4eb8261407d5?w=500,1,60
-2,"Vicks Inhaler","",strip,90.5,108.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,110
-2,"Vitamin A Capsules","",bottle,193.0,231.6,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,100
-2,"Vitamin D3 Capsules","",bottle,186.5,223.8,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,50
-2,"Whey Protein Sachets","",bottle,212.5,255.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,50
-2,"Zinc Tablets","",bottle,206.0,247.2,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,80
-3,"Adhesive Bandage Roll","",unit,130.5,156.6,"17% OFF",https://images.unsplash.com/photo-1583947581924-860bda6a26df?w=500,1,50
-3,Amoxicillin,500mg,strip,98.0,117.6,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,70
-3,"Anti-Acne Cream","",unit,179.0,214.8,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,60
-3,"Anti-Dandruff Shampoo","",unit,140.0,168.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,80
-3,"Antioxidant Capsules","",bottle,225.5,270.6,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,50
-3,"Antiseptic Liquid","",unit,117.5,141.0,"17% OFF",https://images.unsplash.com/photo-1550573104-4eb8261407d5?w=500,1,90
-3,Atorvastatin,10mg,strip,145.0,185.0,"22% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,75
-3,"Ayurvedic Immunity Tablets","",bottle,180.0,216.0,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,80
-3,"Baby Bath Tub","",unit,229.5,275.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,110
-3,"Baby Bottle Cleaner","",unit,262.0,314.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,40
-3,"Baby Colic Drops","",unit,249.0,298.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,60
-3,"Baby Feeding Spoon","",unit,236.0,283.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,100
-3,"Baby Mosquito Repellent","",unit,210.0,252.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,80
-3,"Baby Powder","",unit,223.0,267.6,"17% OFF",https://images.unsplash.com/photo-1616671285390-34907149a407?w=500,1,60
-3,"Baby Skin Protection Cream","",unit,268.5,322.2,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,90
-3,"Baby Soap","",unit,242.5,291.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,90
-3,"Baby Toothpaste","",unit,216.5,259.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,70
-3,"Baby Wet Towels","",unit,255.5,306.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,50
-3,"Basic First Aid Kit","",strip,103.5,124.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,90
-3,"Biotin Capsules","",bottle,206.0,247.2,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,100
-3,"Burn Dressing","",unit,104.5,125.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,110
-3,"Calcium Supplements","",pack,227.5,273.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,90
-3,"Calcium Tablets","",bottle,212.5,255.0,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,90
-3,"Cotton Buds","",unit,159.5,191.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,110
-3,"Cough Syrup","",strip,97.0,116.4,"17% OFF",https://images.unsplash.com/photo-1550573104-4eb8261407d5?w=500,1,40
-3,"Dettol Antiseptic Liquid","",strip,71.0,85.2,"17% OFF",https://images.unsplash.com/photo-1550573104-4eb8261407d5?w=500,1,100
-3,"Digene Tablets","",strip,77.5,93.0,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,90
-3,"Digital Thermometer","",unit,91.5,109.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,70
-3,"Dolo 650","",strip,58.0,69.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,60
-3,"Ear Drops","",strip,64.5,77.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,110
-3,"Emergency Blanket","",unit,124.0,148.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,60
-3,"Emergency Contact Card","",unit,143.5,172.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,90
-3,"Energy Drink Sachet","",strip,45.0,54.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,80
-3,"Eye Wash Solution","",unit,85.0,102.0,"17% OFF",https://images.unsplash.com/photo-1550573104-4eb8261407d5?w=500,1,80
-3,"Fish Oil Capsules","",bottle,186.5,223.8,"17% OFF",https://images.unsplash.com/photo-1611073100829-8739775073c6?w=500,1,70
-3,"Foot Care Cream","",unit,198.5,238.2,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,90
-3,"Glucosamine Tablets","",bottle,219.0,262.8,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,60
-3,"Hair Serum","",unit,172.5,207.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,90
-3,"Hand Cream","",unit,166.0,199.2,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,100
-3,"Hormonal Balance Tablets","",pack,221.0,265.2,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,100
-3,"Immunity Gummies","",bottle,238.5,286.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,90
-3,"Intimate Hygiene Wash","",pack,201.5,241.8,"17% OFF",https://images.unsplash.com/photo-1550573104-4eb8261407d5?w=500,1,70
-3,"Intimate Wipes","",pack,253.5,304.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,90
-3,"Iodine Solution","",strip,51.5,61.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,70
-3,"Maternity Belt","",pack,240.5,288.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,50
-3,"Menopause Supplements","",pack,195.0,234.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,80
-3,ORS,"WHO Formula",pack,18.0,21.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,90
-3,"Pain Relief Gel","",strip,84.0,100.8,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,60
-3,"Panty Liners","",pack,208.0,249.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,60
-3,"Period Heating Patch","",pack,214.5,257.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,110
-3,"Prenatal Vitamins","",pack,247.0,296.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,40
-3,"Protein Powder","",bottle,232.0,278.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,40
-3,Shampoo,"",unit,153.0,183.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,60
-3,"Shaving Cream","",unit,185.5,222.6,"17% OFF",https://images.unsplash.com/photo-1626336943572-b67364b4c093?w=500,1,50
-3,"Sterile Gauze","",unit,98.0,117.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,60
-3,"Sunscreen Lotion","",unit,192.0,230.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,40
-3,"Thermometer (Digital)","",strip,90.5,108.6,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,50
-3,Toothbrush,"",unit,146.5,175.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,70
-3,Tweezers,"",unit,137.0,164.4,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,40
-3,"Vitamin B12 Tablets","",bottle,193.0,231.6,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,60
-3,"Vitamin C",500mg,bottle,120.0,144.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,75
-3,"Vitamin D3","60000 IU",strip,96.0,120.0,"20% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,140
-3,"Vitamin E Capsules","",bottle,199.5,239.4,"17% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,110
-3,"Women Multivitamins","",pack,234.0,280.8,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,60
-3,"Wound Cleaning Solution","",unit,111.0,133.2,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,100
-3,Zincovit,multivitamin,bottle,145.0,174.0,"17% OFF",https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500,1,55
+5,Paracetamol,500mg,strip,20.0,21.74,"8% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGsetPRGd2yrrF1WvDTwwO1dr97izoLMZMlA&s,1,191
+6,Ibuprofen,200mg,strip,35.0,38.89,"10% OFF",https://5.imimg.com/data5/SELLER/Default/2023/6/319597573/MH/NE/SR/135658020/ibuprofen-400-mg-bp-tablets.jpg,1,150
+7,Azithromycin,250mg,strip,95.0,107.95,"12% OFF",https://ipro.blob.core.windows.net/mydocuments/_doxycycline-uses.jpg,1,60
+8,Cetirizine,10mg,strip,28.0,32.94,"15% OFF",https://www.montagelabs.com/product-images/Chlorpheniramine-Maleate-Injec-1716274222.jpg,1,140
+9,ORS,"WHO Formula",pack,18.0,21.95,"18% OFF",https://healthvit.com/cdn/shop/files/i4pdkvwj7dt41n4ycshk.jpg?v=1738541784,1,90
+10,"Vitamin C",500mg,bottle,120.0,153.85,"22% OFF",https://images-cdn.ubuy.co.in/6875260837b6cf82d20e386f-nature-made-extra-strength-d3-5-000-iu.jpg,1,75
+5,Crocin,650mg,strip,34.0,48.57,"30% OFF","https://ik.imagekit.io/wlfr/wellness/images/products/321214-1.JPG/tr:w-3840,c-at_max,cm-pad_resize,ar-1210-700,pr-true,f-auto,q-70,l-image,i-Wellness_logo_BDwqbQao9.png,lfo-bottom_right,w-200,h-90,c-at_least,cm-pad_resize,l-end",1,90
+6,Calpol,500mg,strip,26.0,27.37,"5% OFF",https://www.bbassets.com/media/uploads/p/l/1200009962_2-calpol-500-tablet.jpg,1,110
+7,Zincovit,multivitamin,bottle,145.0,164.77,"12% OFF",https://cdn01.pharmeasy.in/dam/products_otc/I14733/zincovit-cl-bottle-of-200ml-syrup-3-1749791119.jpg?dim=1440x1440&q=75,1,55
+8,Paracetamol,650mg,strip,24.0,28.24,"15% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGsetPRGd2yrrF1WvDTwwO1dr97izoLMZMlA&s,1,180
+9,Levocetirizine,5mg,strip,38.0,46.34,"18% OFF",https://tiimg.tistatic.com/fp/1/007/645/cetirizine-tablets-317.jpg,1,90
+10,Omeprazole,20mg,strip,62.0,79.49,"22% OFF",https://pics.walgreens.com/prodimg/400302/3_450.jpg,1,120
+5,Metformin,500mg,strip,48.0,64.0,"25% OFF",https://efpia.co.in/wp-content/uploads/2024/10/Glimepiride-Tablets-IP-2-MG-GLIMRIL-2-2-scaled.jpg.webp,1,199
+6,Atorvastatin,10mg,strip,145.0,207.14,"30% OFF",https://www.emedbucket.com/emedpro_img/uploads/product/main/STERIS_PHARMA/1702538500_1.jpeg,1,75
+7,"Vitamin D3","60000 IU",strip,96.0,101.05,"5% OFF",https://naturesbounty.com/cdn/shop/products/002843_grande.png?v=1667506615,1,140
+8,"Paracetamol 500mg","",strip,392.0,426.09,"8% OFF",https://www.mccabespharmacy.com/cdn/shop/files/PfizerParacetamol500mgFilmCoatedTablets24Pack.jpg?v=1704467734&width=2000,1,40
+9,"Crocin Advance","",strip,51.5,57.22,"10% OFF",https://5.imimg.com/data5/TI/GS/RJ/GLADMIN-42122455/selection-046-500x500-500x500.png,1,50
+10,"Dolo 650","",strip,58.0,65.91,"12% OFF",https://assets.truemeds.in/Images/ProductImage/TM-TACR1-011691/dolo-650-tablet-15_dolo-650-tablet-15--TM-TACR1-011691_1.png,1,60
+5,"ORS Sachets","",strip,64.5,75.88,"15% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoi9dXBv8Nn4X9EgxWboaTLjVjJQdO9BSHiQ&s,1,70
+6,"Digene Tablets","",strip,77.5,99.36,"22% OFF",https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500,1,90
+7,"Gelusil Syrup","",strip,84.0,112.0,"25% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbuB3XXo9JKVJPcJPhKPMiFy7kmwEZCLMK8g&s,1,100
+8,"Vicks Inhaler","",strip,90.5,129.29,"30% OFF",https://thefrenchpharmacy.co/cdn/shop/files/template_products_shopify_81.png?v=1726426615,1,110
+9,"Cough Syrup","",strip,97.0,102.11,"5% OFF",https://www.doctorbhargava.com/cdn/shop/files/Benefits_1000x.jpg?v=1753184583,1,40
+10,"Nasal Drops","",strip,103.5,112.5,"8% OFF",https://cdn01.pharmeasy.in/dam/products_otc/375380/nasivion-classic-adult-nasal-spray-10ml-6.1-1732879683.jpg,1,50
+5,"Pain Relief Spray","",strip,45.0,50.0,"10% OFF","https://onemg.gumlet.io/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/65b33aab157d4cf9b6e3853254b83341.jpg",1,60
+6,"Iodine Solution","",strip,51.5,58.52,"12% OFF",https://5.imimg.com/data5/SELLER/Default/2022/3/HO/LQ/AM/11009213/betadine-vodadine-cipladine-povidone-iodine-100ml-200ml-500ml-1000ml-5l-500x500.png,1,70
+7,"Cotton Roll","",strip,58.0,68.24,"15% OFF","https://m.media-amazon.com/images/I/51IAo15WagL._AC_UF1000,1000_QL80_.jpg",1,80
+8,"Band-Aid Strips","",strip,64.5,78.66,"18% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfxRGvvs_yyErcqsaahPhUtlEarAG_Sxtmg&s,1,90
+9,"Dettol Antiseptic Liquid","",strip,71.0,91.03,"22% OFF",https://premmedical.in/wp-content/uploads/2020/05/dettol-antiseptic-liquid-2.jpg,1,100
+10,"Savlon Liquid","",strip,77.5,103.33,"25% OFF","https://onemg.gumlet.io/l_watermark_346,w_690,h_700/a_ignore,w_690,h_700,c_pad,q_auto,f_auto/817016e944d347f1b7fa677ce9241dd1.jpg",1,110
+5,"Hand Sanitizer","",strip,84.0,120.0,"30% OFF",https://www.moglix.com/blog/wp-content/uploads/2020/09/blog-banner-hand-sanitizer2.jpg,1,40
+6,"Thermometer (Digital)","",strip,90.5,95.26,"5% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmkHZC2pUOgE-RA1ms2PXklCmQbX-dG8_86Q&s,1,50
+7,"Hot Water Bag","",strip,97.0,105.43,"8% OFF",https://mexple.com/cdn/shop/files/relax100website_1.webp?v=1738301926,1,60
+8,"Glucose Powder","",strip,374.0,415.56,"10% OFF",https://pluuginstore.com/cdn/shop/files/4_204430a9-9987-49c3-a453-5a42967ff43d.jpg?v=1742472615&width=1946,1,70
+9,"Energy Drink Sachet","",strip,45.0,51.14,"12% OFF","https://m.media-amazon.com/images/I/81+Y06A3AaL._AC_UF894,1000_QL80_.jpg",1,80
+10,"Fever Patch","",strip,51.5,60.59,"15% OFF","https://m.media-amazon.com/images/I/71mO5Mkpb7S._AC_UF1000,1000_QL80_.jpg",1,90
+5,"Eye Drops (Lubricant)","",strip,58.0,70.73,"18% OFF","https://images.apollo247.in/pub/media/catalog/product/R/E/REF0006_1_1.jpg?tr=q-80,f-webp,w-400,dpr-3,c-at_max%20400w",1,100
+6,"Ear Drops","",strip,64.5,82.69,"22% OFF",https://www.healingpharma.in/wp-content/uploads/2022/03/Candicort-Drops-new.jpg,1,110
+7,"Burn Ointment","",strip,71.0,94.67,"25% OFF",https://images.ctfassets.net/k8ix1sm1b48c/4Qg3rWgoP7erkiH722ZprQ/9c19ee04cc1f9d2b9f5fd4ac6dd5b11e/5oz_obwb-en-us,1,40
+8,"Headache Balm","",strip,77.5,110.71,"30% OFF","https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/NI_CATALOG/IMAGES/CIW/2024/7/12/fbf049a0-c91f-4205-b307-83621a9d3d95_RubsBalmSprayDecongestant_L6F0SUMD05_MN.png",1,50
+9,"Pain Relief Gel","",strip,84.0,88.42,"5% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaCybESurGRkK4oNO2bcTPrEfM3GBQEuvYhg&s,1,60
+10,"Muscle Relaxant Tablet","",strip,90.5,98.37,"8% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUVDNYE5CKngIzO_0aTN05d1xwvsPAVvMYpQ&s,1,70
+5,"Antihistamine Tablet","",strip,97.0,107.78,"10% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU2beNnfkoxxbprnEMkhFhBxhM0QpvwhzIzw&s,1,79
+6,"Basic First Aid Kit","",strip,103.5,117.61,"12% OFF",https://image.made-in-china.com/202f0j00UONqVRnlEBcT/Hot-Sale-Outdoor-Travel-Emergency-Use-First-Aid-Kits.webp,1,90
+7,"Vitamin C Tablets","",bottle,180.0,211.76,"15% OFF",https://suspire.in/cdn/shop/products/VitaminC_3_1080x.jpg?v=1669359999,1,40
+8,"Vitamin D3 Capsules","",bottle,186.5,227.44,"18% OFF",https://cdn01.pharmeasy.in/dam/products_otc/J96673/genone-calgen-d3-60k-vitamin-d3-for-boosting-immunity-healthy-bones-and-strong-muscles-20-caps-2-1710155204.jpg,1,50
+9,"Vitamin B12 Tablets","",bottle,193.0,247.44,"22% OFF",https://www.thehimalayanorganics.in/cdn/shop/files/FrontJPG_dc93a1c2-a229-4be3-989d-23abf49b64d1.jpg?v=1740982138,1,60
+10,"Multivitamin Tablets","",bottle,199.5,266.0,"25% OFF",https://pacome.in/wp-content/uploads/2024/07/Immunity-and-Health-Booster-1.jpg,1,70
+5,"Zinc Tablets","",bottle,206.0,294.29,"30% OFF","https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/now/now01522/y/72.jpg",1,80
+6,"Calcium Tablets","",bottle,268.0,282.11,"5% OFF",https://swisslifeforever.in/cdn/shop/files/Calcium_60.jpg?v=1763983189,1,90
+7,"Iron Tablets","",bottle,219.0,238.04,"8% OFF",https://mycf.in/cdn/shop/files/B0751BXN4Y.MAIN.jpg?v=1752236687,1,99
+8,"Omega-3 Capsules","",bottle,225.5,250.56,"10% OFF","https://m.media-amazon.com/images/I/7120o1GM1HL._AC_UF1000,1000_QL80_.jpg",1,110
+9,"Protein Powder","",bottle,356.0,404.55,"12% OFF",https://sezpronutrition.com/cdn/shop/files/chocolate_protein_powder.webp?v=1708174832,1,40
+10,"Energy Booster Capsules","",bottle,238.5,280.59,"15% OFF",https://cdn01.pharmeasy.in/dam/products_otc/N72346/inlife-energy-booster-supplement-tribulus-green-coffee-moringa-shilajit-ashwagandha-60-veg-capsules-6.3-1671745031.jpg?dim=480x480&q=75,1,50
+5,"Immunity Booster Syrup","",bottle,180.0,219.51,"18% OFF",https://www.raplgroup.in/assets/images/products/gallery/key-ingredinents-immunoboost-syrup.webp,1,60
+6,"Fish Oil Capsules","",bottle,186.5,239.1,"22% OFF",https://rukminim2.flixcart.com/image/480/640/xif0q/vitamin-supplement/s/l/w/30-salmon-omega-3-fish-oil-with-epa-180mg-dha-120mg-omega-fatty-original-imahebjgvdkhza9h.jpeg?q=90,1,70
+7,"Magnesium Tablets","",bottle,193.0,257.33,"25% OFF","https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/cen/cen22713/y/85.jpg",1,80
+8,"Folic Acid Tablets","",bottle,199.5,285.0,"30% OFF",https://www.medibyte.in/wp-content/uploads/2019/05/FEDSO-XT-TAB-scaled.jpg,1,90
+9,"Biotin Capsules","",bottle,206.0,216.84,"5% OFF",https://cdn01.pharmeasy.in/dam/products_otc/G25147/nutrija-biotin-supplement-for-hair-health-reduce-hair-fall-boost-hair-growth-120-capsules-2-1714626192.jpg,1,100
+10,"Hair & Skin Vitamins","",bottle,212.5,230.98,"8% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt24jtVcj7VwmsPJv8baTSIeoXOLMlnblToQ&s,1,110
+5,"Joint Health Supplements","",bottle,219.0,243.33,"10% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJjt_274uJrPee59t4uQZnjycJGtGhrs4wnw&s,1,40
+6,"Antioxidant Capsules","",bottle,312.0,354.55,"12% OFF",https://m.media-amazon.com/images/I/81WNopkig5L.jpg,1,50
+7,"Kids Multivitamins","",bottle,232.0,272.94,"15% OFF","https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/dfn/dfn00771/l/50.jpg",1,60
+8,"Senior Citizen Multivitamins","",bottle,238.5,290.85,"18% OFF","https://m.media-amazon.com/images/I/61swG2-1n8L._AC_UF1000,1000_QL80_.jpg",1,70
+9,"Ayurvedic Immunity Tablets","",bottle,180.0,230.77,"22% OFF","https://onemg.gumlet.io/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/sescjcbadgkedtltqb5p.jpg",1,80
+10,"Herbal Supplements","",bottle,186.5,248.67,"25% OFF",https://www.tataconsumer.com/sites/g/files/gfwrlq316/files/supplement-banner-768-X-768.jpg,1,90
+5,"Vitamin A Capsules","",bottle,193.0,275.71,"30% OFF",https://images-static.nykaa.com/media/catalog/product/d/e/dec54c6HIMAA00000120_r1.jpg,1,100
+6,"Vitamin E Capsules","",bottle,224.0,235.79,"5% OFF",https://www.ashpveda.com/cdn/shop/articles/Vitamin_E_Capsules_For_Face_76d2e81c-5eb9-4174-b7f6-4e68a3c56509.webp?v=1745910277&width=1100,1,110
+7,"Probiotic Capsules","",bottle,206.0,223.91,"8% OFF","https://onemg.gumlet.io/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/6b2bf94e98964a08acdf32efffb686be.jpg",1,40
+8,"Whey Protein Sachets","",bottle,212.5,236.11,"10% OFF",https://fuelled.in/cdn/shop/files/Whey_Protein_-_Mixed_Bundle_-_Fuelled.png?v=1721476081,1,50
+9,"Glucosamine Tablets","",bottle,219.0,248.86,"12% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNtNWqQu1F19fdtFoAjf8LOZ_zgJ1uQalSsg&s,1,60
+10,"Calcium + D3 Combo","",bottle,338.0,397.65,"15% OFF","https://onemg.gumlet.io/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/b4ff23cb55f8407abb27d6b4a5d364da.jpg",1,70
+5,"Iron Syrup","",bottle,232.0,282.93,"18% OFF",https://cdn01.pharmeasy.in/dam/productsnowatermark/386586/iron-red-syrup-200ml-side-6.4-1756922217-non-watermarked.jpg,1,80
+6,"Immunity Gummies","",bottle,356.0,456.41,"22% OFF",https://www.cureka.com/wp-content/uploads/2023/06/Immunity-Gummy-4-600x600.jpg,1,90
+7,Bandages,"",unit,85.0,113.33,"25% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6AQ0U_3B2cRLqlHk4NEEoSu2EPcHob9jOxg&s,1,40
+8,"Cotton Pads","",unit,91.5,130.71,"30% OFF",https://www.vega.co.in/pub/media/catalog/product/c/p/cp-01_3.jpg,1,50
+9,"Sterile Gauze","",unit,98.0,103.16,"5% OFF",https://rukminim2.flixcart.com/image/480/640/kqgyhe80/guaze-roll/i/m/u/pack-of-50-counts-gauze-swab-10-cm-x-10-cm-12-ply-sterile-swab-5-original-imag4hbwru85jg4k.jpeg?q=90,1,60
+10,"Medical Tape","",unit,104.5,113.59,"8% OFF",https://rukminim2.flixcart.com/image/480/640/xif0q/first-aid-tape/u/5/p/non-woven-microporous-paper-tape-1-25-cm-x-5-m-pack-of-24-white-original-imagr2efkg7zws7p.jpeg?q=90,1,70
+5,"Antiseptic Cream","",unit,111.0,123.33,"10% OFF",https://himalayawellness.in/cdn/shop/products/antiseptic-cream.jpg?v=1622099573,1,80
+6,"Antiseptic Liquid","",unit,117.5,133.52,"12% OFF",https://cdn01.pharmeasy.in/dam/products_otc/I40695/dettol-germ-defence-antiseptic-liquid-bottle-550-ml-6.02-1770097987.jpg,1,90
+7,"Burn Cream","",unit,124.0,145.88,"15% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYuhi6ObzKX12OFwNUWrOu-H8edzJKvW1LOA&s,1,100
+8,"Scissors (Medical)","",unit,130.5,159.15,"18% OFF","https://m.media-amazon.com/images/I/71wlPguLz3L._UF894,1000_QL80_.jpg",1,110
+9,Tweezers,"",unit,137.0,175.64,"22% OFF",https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/images/284/044/a5cf29d5-f127-4aed-b014-62d5c6e8b49e/640/a5cf29d5-f127-4aed-b014-62d5c6e8b49e.jpg,1,40
+10,"Disposable Gloves","",unit,143.5,191.33,"25% OFF",https://uk.unigloves.com/cdn/shop/files/P-GS002X_Glove_Box.jpg?v=1762166275,1,50
+5,"Face Masks","",unit,85.0,121.43,"30% OFF",https://m.media-amazon.com/images/I/71le9YQOxjL.jpg,1,60
+6,"Digital Thermometer","",unit,91.5,96.32,"5% OFF",https://easycareglobal.com/cdn/shop/files/easycare-digital-thermometer-one-button-operation_700x700.jpg?v=1758106380,1,70
+7,"Ice Pack","",unit,98.0,106.52,"8% OFF","https://m.media-amazon.com/images/I/61rdHOy6YeL._AC_UF1000,1000_QL80_.jpg",1,80
+8,"Pain Relief Spray","",unit,104.5,116.11,"10% OFF","https://onemg.gumlet.io/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/65b33aab157d4cf9b6e3853254b83341.jpg",1,90
+9,"Wound Cleaning Solution","",unit,111.0,126.14,"12% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcwUBG0_EQOcet5h9mjPgVxV7SO7fixVhJMw&s,1,100
+10,"Antibiotic Ointment","",unit,117.5,138.24,"15% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEnSv4YidaE9Vs9A5dWAZsM4-AcFBAm7u9wg&s,1,110
+5,"Crepe Bandage","",unit,320.0,390.24,"18% OFF",https://jsbhealthcare.co.in/cdn/shop/files/Image-7_dbe45d85-589f-4c87-a98a-7050470f087d.webp?v=1737988147,1,40
+6,"Adhesive Bandage Roll","",unit,130.5,167.31,"22% OFF",https://rukminim2.flixcart.com/image/480/640/xif0q/crepe-bandage/g/q/5/cotton-high-elastic-adhesive-bandage-10cm-x-4-5m-for-compression-original-imah8jhua7dd4mcf.jpeg?q=90,1,49
+7,"Alcohol Swabs","",unit,137.0,182.67,"25% OFF","https://m.media-amazon.com/images/I/51+1NRtVqoL._AC_UF1000,1000_QL80_.jpg",1,60
+8,"ORS Packets","",unit,143.5,205.0,"30% OFF",https://images.apollo247.in/pub/media/catalog/product/w/a/wal0195_1_1.jpg,1,70
+9,"Eye Wash Solution","",unit,85.0,89.47,"5% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYSXhkscWrHK13Lzz8pda0uahxmznZC0uuKQ&s,1,80
+10,"First Aid Box","",unit,91.5,99.46,"8% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnAFJDnIXQFQ8VffZphkUp_ArJyHI3dOqHgg&s,1,90
+5,"Finger Bandage","",unit,98.0,108.89,"10% OFF",https://rukminim2.flixcart.com/image/480/640/xif0q/finger-sleeve/z/v/s/1-aluminium-finger-splint-fracture-corrector-with-adjustable-original-imagnq8xwuvhnd4v.jpeg?q=90,1,100
+6,"Burn Dressing","",unit,104.5,118.75,"12% OFF",https://gearbags.com/wp-content/uploads/2018/09/LXBD44_ARMPKG-scaled.jpg,1,110
+7,"Hand Sanitizer","",unit,111.0,130.59,"15% OFF",https://www.moglix.com/blog/wp-content/uploads/2020/09/blog-banner-hand-sanitizer2.jpg,1,40
+8,"Safety Pins","",unit,117.5,143.29,"18% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN8mZnt4AilUOoQl77sNu_zx9kt4GEqLmHQg&s,1,50
+9,"Emergency Blanket","",unit,124.0,158.97,"22% OFF","https://m.media-amazon.com/images/I/81R9Qgirs9L._AC_UF1000,1000_QL80_.jpg",1,60
+10,"Antifungal Cream","",unit,130.5,174.0,"25% OFF",https://images.meesho.com/images/products/470069834/qq8pv_512.webp?width=512,1,70
+5,"Medical Scalpels","",unit,137.0,195.71,"30% OFF",https://images-cdn.ubuy.co.in/6941247ed1c74099d20b15d4-scalpel-sterile-blades-10-10pcs-sterile.jpg,1,80
+6,"Emergency Contact Card","",unit,143.5,151.05,"5% OFF","https://m.media-amazon.com/images/I/710O0R4eNWL._AC_UF1000,1000_QL80_.jpg",1,90
+7,"Face Wash","",unit,140.0,152.17,"8% OFF",https://joypersonalcare.com/cdn/shop/files/Lemon_Face_Wash_Image_2_070e0012-ebe7-447a-ac27-8edae47f9a44.jpg?v=1754388525&width=1946,1,40
+8,"Body Wash","",unit,146.5,162.78,"10% OFF","https://m.media-amazon.com/images/I/61byf6a5nZL._AC_UF1000,1000_QL80_.jpg",1,50
+9,Shampoo,"",unit,153.0,173.86,"12% OFF",https://www.brillare.co.in/cdn/shop/files/Hair-Fall-Control-Shampoo-2_3230a97f-5b99-4920-b47e-1e8f7ec6b027.jpg?v=1760616855&width=1500,1,60
+10,Conditioner,"",unit,159.5,187.65,"15% OFF",https://lovebeautyandplanet.in/cdn/shop/files/1_83539c44-47b4-4633-a43a-fbd5dd47bc63.jpg?v=1757130536&width=1946,1,70
+5,"Hair Oil","",unit,166.0,202.44,"18% OFF",https://justhuman.co.in/cdn/shop/files/Asset14_4209927b-44c7-41bb-a725-ea1dbe0a4215.jpg?v=1711106665&width=1500,1,80
+6,"Hair Serum","",unit,392.0,502.56,"22% OFF",https://images-static.nykaa.com/media/catalog/product/3/1/31462b56923700970449_v6.jpg?tr=w-500,1,90
+7,"Face Cream","",unit,179.0,238.67,"25% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtUNA-n8BLXdePXgPZCUbod7U5uVSYubvkCQ&s,1,100
+8,Moisturizer,"",unit,185.5,265.0,"30% OFF","https://m.media-amazon.com/images/I/41fbOSXgtkL._AC_SR290,290_.jpg",1,110
+9,"Sunscreen Lotion","",unit,192.0,202.11,"5% OFF",https://globusnaturals.com/cdn/shop/files/2-1_ab69c1d6-3003-41bc-b00a-fcce5539ea2b.jpg?v=1721816187,1,40
+10,"Lip Balm","",unit,198.5,215.76,"8% OFF",https://cdn.shopify.com/s/files/1/2402/9599/files/2_22fe404c-e505-4094-b5e7-2290df35886a.jpg?v=1736250753&width=1946,1,50
+5,Toothpaste,"",unit,140.0,155.56,"10% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQKa9LGb-hdNtJTANDuXldptlguR7CkUmenA&s,1,60
+6,Toothbrush,"",unit,180.0,204.55,"12% OFF",https://mytusk.in/cdn/shop/files/1-1.png?v=1761553101&width=416,1,70
+7,Mouthwash,"",unit,153.0,180.0,"15% OFF",https://www.habbits.in/cdn/shop/files/Hemp-mouthwash-pack_of_2.jpg?v=1748511296,1,80
+8,"Hand Wash","",unit,159.5,194.51,"18% OFF",https://images-static.nykaa.com/media/catalog/product/a/4/a46218f8901314006141_1610_0.jpg,1,90
+9,"Hand Cream","",unit,166.0,212.82,"22% OFF",https://www.fixderma.com/cdn/shop/files/hand_cream_reviews.webp?v=1758025450,1,100
+10,Deodorant,"",unit,172.5,230.0,"25% OFF","https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/dve/dve07216/y/14.jpg",1,110
+5,Perfume,"",unit,179.0,255.71,"30% OFF",https://aafiyaperfumes.com/cdn/shop/files/671D72E5-2D1C-4201-9BFD-253542B2F7AD.jpg?v=1747812750&width=1445,1,40
+6,"Shaving Cream","",unit,312.0,328.42,"5% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvKW-hIkQzmVLxDWZpdIqHIhaZ2zu_dZqwvw&s,1,50
+7,Razor,"",unit,192.0,208.7,"8% OFF",https://oneclickshopping.pk/wp-content/uploads/2023/09/WBM-Soft-Women-Body-Razor-2-Pcs.webp,1,60
+8,"After Shave Lotion","",unit,198.5,220.56,"10% OFF",https://www.shavinggracebarbers.com/wp-content/uploads/2020/10/SG-Aftershave-web.jpg,1,70
+9,"Anti-Dandruff Shampoo","",unit,140.0,159.09,"12% OFF",https://www.mywishcare.com/cdn/shop/files/6_c3646d3c-542b-4209-abca-85cb5b5dab3a.jpg?v=1768034413&width=1080,1,80
+10,"Hair Color","",unit,146.5,172.35,"15% OFF","https://m.media-amazon.com/images/I/71LvRr0+VFL._AC_UF350,350_QL80_.jpg",1,90
+5,"Nail Cutter","",unit,153.0,186.59,"18% OFF",https://images.naptol.com/usr/local/csp/staticContent/product_images/horizontal/750x750/Nail-Clipper-With-Magnifying-Glass-1.jpg,1,100
+6,"Cotton Buds","",unit,224.0,287.18,"22% OFF",https://images-static.nykaa.com/media/catalog/product/5/f/5fec660MAJAB00000227_01.jpg?tr=w-500,1,110
+7,"Wet Wipes","",unit,374.0,498.67,"25% OFF",https://m.media-amazon.com/images/I/71fMNnLGNdL.AC_SX500.jpg,1,40
+8,"Facial Tissues","",unit,172.5,246.43,"30% OFF","https://m.media-amazon.com/images/I/81eBg7ftmXL._AC_UF1000,1000_QL80_.jpg",1,50
+9,"Anti-Acne Cream","",unit,179.0,188.42,"5% OFF","https://m.media-amazon.com/images/I/71gwhXjHLvL._AC_UF350,350_QL80_.jpg",1,60
+10,"Fairness Cream","",unit,185.5,201.63,"8% OFF",https://jmos.co.in/files/image/Himalaya%20Herbals%20Fairness%20Cream.jpg,1,70
+5,"Body Lotion","",unit,192.0,213.33,"10% OFF",https://d2p5rd30inmhrb.cloudfront.net/m2/media/catalog/product/c/o/copy_of_1.jpg,1,80
+6,"Foot Care Cream","",unit,356.0,404.55,"12% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXjt2wyNoGgAVwl6wwL9qxcJXW1DjaG6TAhw&s,1,90
+7,"Baby Diapers","",unit,210.0,247.06,"15% OFF",https://www.menmoms.in/cdn/shop/files/MM-3060-L-_PK-of-24_-1a_3a4ee687-031b-4ebc-b408-7b2ffe14b5a0.jpg?v=1747394203,1,40
+8,"Baby Wipes","",unit,216.5,264.02,"18% OFF",https://images-cdn.ubuy.co.in/69438e9232babce9b4000a4c-pampers-baby-wipes-sensitive-perfume.jpg,1,50
+9,"Baby Powder","",unit,223.0,285.9,"22% OFF",https://images-static.nykaa.com/media/catalog/product/2/5/2589fa7N_8901012111048_1.jpg,1,60
+10,"Baby Oil","",unit,229.5,306.0,"25% OFF",https://images-static.nykaa.com/media/catalog/product/2/5/2589fa78901012113400_1.jpg?tr=w-500,1,70
+5,"Baby Shampoo","",unit,236.0,337.14,"30% OFF",https://images.ctfassets.net/aub2fvcyp2t8/39tZXffnAfykKscf9zj3o2/15b26ae4328b9a8b6065ea78490bb1f5/nmt_image_1_new-hi-in,1,80
+6,"Baby Soap","",unit,242.5,255.26,"5% OFF",https://images-static.nykaa.com/media/catalog/product/2/5/2589fa7N_8901012112397_1.jpg,1,90
+7,"Baby Lotion","",unit,249.0,270.65,"8% OFF","https://assets.myntassets.com/h_1440,q_75,w_1080/v1/assets/images/25747558/2023/11/7/0a9017aa-8213-4704-b7a0-fa1ab98efe3f1699336087829DaburBabyLotionContainsAloeVeraAlmondspHbalancedwithNoParabe1.jpg",1,100
+8,"Baby Feeding Bottle","",unit,255.5,283.89,"10% OFF","https://m.media-amazon.com/images/I/616A6zD72SL._AC_UF894,1000_QL80_.jpg",1,110
+9,"Baby Bottle Cleaner","",unit,262.0,297.73,"12% OFF",https://mothersparsh.com/cdn/shop/files/Plant-Powered-baby-cleanser-for-Clean-baby-bottle-Clean-baby-toys-pacifiers-500ml-4.webp?v=1714817483&width=1445,1,40
+10,"Baby Rash Cream","",unit,268.5,315.88,"15% OFF",https://m.media-amazon.com/images/I/61tZl1CS+wL.jpg,1,50
+5,"Baby Toothbrush","",unit,210.0,256.1,"18% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEGHK8oa6y0bTZjzBC2M6YqqNeB2XWdaaYig&s,1,60
+6,"Baby Toothpaste","",unit,216.5,277.56,"22% OFF",https://images.mamaearth.in/catalog/product/m/a/mamaearth-fruit-punch-toothpaste_4_n2t9anvmgyddxb1w.jpg?format=auto&height=600,1,70
+7,"Baby Food Cereal","",unit,223.0,297.33,"25% OFF","https://m.media-amazon.com/images/I/813gjWq9FlL._AC_UF1000,1000_QL80_.jpg",1,73
+8,"Baby Milk Formula","",unit,356.0,508.57,"30% OFF",https://kidscity.in/cdn/shop/files/KC05502-KC_ba456f53-33f0-4144-8ac3-a1fd76e674c6.jpg?v=1764418971,1,90
+9,"Baby Feeding Spoon","",unit,236.0,248.42,"5% OFF",https://littloo.in/cdn/shop/products/BabySpoon.jpg?v=1740391578,1,100
+10,"Baby Thermometer","",unit,242.5,263.59,"8% OFF","https://m.media-amazon.com/images/I/71yQH61Rk9L._AC_UF1000,1000_QL80_.jpg",1,110
+5,"Baby Massage Oil","",unit,249.0,276.67,"10% OFF",https://cdn01.pharmeasy.in/dam/products_otc/264337/himalaya-baby-massage-body-oil-bottle-of-500-ml-3-1669655116.jpg,1,40
+6,"Baby Wet Towels","",unit,255.5,290.34,"12% OFF",https://m.media-amazon.com/images/I/71fMNnLGNdL.AC_SX500.jpg,1,50
+7,"Baby Napkins","",unit,262.0,308.24,"15% OFF",https://uniclan.in/wp-content/uploads/2024/02/Tips-in-choosing-the-best-baby-napkins.png,1,60
+8,"Baby Cotton","",unit,268.5,327.44,"18% OFF",https://baybee.co.in/cdn/shop/files/719usBUBtEL_1400x.jpg?v=1745002047,1,70
+9,"Baby Mosquito Repellent","",unit,210.0,269.23,"22% OFF",https://duckduckbaby.in/cdn/shop/files/DDB7364_1.jpg?v=1744802228,1,80
+10,"Baby Sunscreen","",unit,216.5,288.67,"25% OFF","https://m.media-amazon.com/images/I/61rqWeanQNL._AC_UF1000,1000_QL80_.jpg",1,90
+5,"Baby Nail Scissors","",unit,223.0,318.57,"30% OFF",https://breeze-media.vega.co.in/media/catalog/product/cache/1ef41c8834aa6b772f4686b0f4051c34/v/e/vega_baby_nail_scissors_clipper_set_vbga3-06_-05.webp,1,100
+6,"Baby Bath Tub","",unit,229.5,241.58,"5% OFF",https://rukminim2.flixcart.com/image/328/328/xif0q/bath-tub/c/n/7/bathtub-bath-seat-with-temperature-sensor-baby-kids-bather-chair-original-imahkz3mx67dz3rs.jpeg?q=90&crop=false,1,110
+7,"Baby Soft Towels","",unit,236.0,256.52,"8% OFF",https://www.babyforest.in/cdn/shop/files/7_29afc635-ffcc-4364-a347-c26d9e9c90d2_2000x2000.jpg?v=1715765684,1,40
+8,"Baby Face Cream","",unit,242.5,269.44,"10% OFF",https://duckduckbaby.in/cdn/shop/files/DDB13527.jpg?v=1727081345,1,50
+9,"Baby Colic Drops","",unit,249.0,282.95,"12% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-0eRVVJlNH78D4EAacgIfoTZDHH5p-pkwgg&s,1,60
+10,"Baby Vitamin Drops","",unit,255.5,300.59,"15% OFF",https://cdn01.pharmeasy.in/dam/products_otc/P26899/ultra-d3-natural-pineapple-flavour-400iu-vitamin-d3-for-infants-vitamin-drops-bottle-of-15-ml-6.2-1697181629.jpg,1,70
+5,"Baby Herbal Oil","",unit,262.0,319.51,"18% OFF",https://maate.in/cdn/shop/files/Slide2_b2cdf6c8-14e7-4f15-b6a4-4154091e0acf.jpg?v=1756378666&width=1500,1,80
+6,"Baby Skin Protection Cream","",unit,268.5,344.23,"22% OFF","https://m.media-amazon.com/images/I/71GRe2bAJ5L._AC_UF1000,1000_QL80_.jpg",1,90
+7,"Sanitary Pads","",pack,195.0,260.0,"25% OFF",https://azah.in/cdn/shop/files/San-Pad-05_700x700.jpg?v=1759227264,1,40
+8,"Menstrual Cups","",pack,201.5,287.86,"30% OFF",https://euassets.totmcdn.com/v4/2020/11/Your-paragraph-text-12.png,1,50
+9,"Panty Liners","",pack,338.0,355.79,"5% OFF","https://m.media-amazon.com/images/I/61HE1KyOqaL._AC_UF1000,1000_QL80_.jpg",1,60
+10,"Period Pain Relief Tablets","",pack,214.5,233.15,"8% OFF","https://images.apollo247.in/pub/media/catalog/product/s/a/sar0244-1-.png?tr=q-80,f-webp,w-400,dpr-3,c-at_max%20400w",1,70
+5,"Iron Tablets","",pack,221.0,245.56,"10% OFF",https://mycf.in/cdn/shop/files/B0751BXN4Y.MAIN.jpg?v=1752236687,1,80
+6,"Calcium Supplements","",pack,268.0,304.55,"12% OFF",https://media.post.rvohealth.io/wp-content/uploads/2023/11/3274941-Dec-T4-Market-Update-5-Best-Calcium-Supplements-for-2024-According-to-our-Dietitians-1296x728-Header-fcba44.jpg,1,90
+7,"Folic Acid Tablets","",pack,234.0,275.29,"15% OFF",https://www.medibyte.in/wp-content/uploads/2019/05/FEDSO-XT-TAB-scaled.jpg,1,100
+8,"Pregnancy Test Kit","",pack,240.5,293.29,"18% OFF",https://cdn01.pharmeasy.in/dam/products_otc/226830/prega-news-pregnancy-test-kit-1-1754294108.jpg,1,110
+9,"Prenatal Vitamins","",pack,247.0,316.67,"22% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNaAw35ZKFwJxMOd3HDSlCN7ABd40U1XZdUg&s,1,40
+10,"Postnatal Supplements","",pack,253.5,338.0,"25% OFF",https://m.media-amazon.com/images/I/61pEHx-NUPS.jpg,1,50
+5,"Vaginal Wash","",pack,195.0,278.57,"30% OFF","https://m.media-amazon.com/images/I/61jUqSbosKL._AC_UF1000,1000_QL80_.jpg",1,60
+6,"Intimate Hygiene Wash","",pack,201.5,212.11,"5% OFF","https://m.media-amazon.com/images/I/81vioqZs-6L._AC_UF350,350_QL80_.jpg",1,70
+7,"Anti-Fungal Cream","",pack,208.0,226.09,"8% OFF",https://www.distacart.com/cdn/shop/products/Dr.Jrk_s-AF-Anti-Fungal-Cream_600x.jpg?v=1762271307,1,80
+8,"PCOS Supplements","",pack,214.5,238.33,"10% OFF",https://m.media-amazon.com/images/I/71CwHyYEMUL.jpg,1,90
+9,"Hormonal Balance Tablets","",pack,221.0,251.14,"12% OFF",https://m.media-amazon.com/images/I/61cQMk5FVbL.jpg,1,100
+10,"Iron Syrup","",pack,227.5,267.65,"15% OFF",https://cdn01.pharmeasy.in/dam/productsnowatermark/386586/iron-red-syrup-200ml-side-6.4-1756922217-non-watermarked.jpg,1,110
+5,"Breast Care Cream","",pack,234.0,285.37,"18% OFF",https://5.imimg.com/data5/SELLER/Default/2022/10/SJ/CG/RV/7665709/breast-enlargement-cream.jpg,1,40
+6,"Maternity Belt","",pack,312.0,400.0,"22% OFF",https://m.media-amazon.com/images/I/81JgseuJPAL.jpg,1,50
+7,"Stretch Mark Cream","",pack,247.0,329.33,"25% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgwlOtV7w-KlC1B403MeGd0T9C_KLE6P65Gw&s,1,60
+8,"Lactation Support Capsules","",pack,253.5,362.14,"30% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi-lF6ER5UBGTl4J0Jkq6OXia8senF_PW0Hw&s,1,70
+9,"Menopause Supplements","",pack,195.0,205.26,"5% OFF","https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/fhh/fhh12410/y/24.jpg",1,80
+10,"Urinary Health Tablets","",pack,320.0,347.83,"8% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRahLJTfrFHyeGJXVLwiMGwU9XDNytTzlUPCQ&s,1,90
+5,"Vaginal Infection Tablets","",pack,208.0,231.11,"10% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFTZCv1U7jGGBPlkswQQSbqAt6r5x7_ni6gQ&s,1,100
+6,"Period Heating Patch","",pack,224.0,254.55,"12% OFF","https://m.media-amazon.com/images/I/61pjMT8el2L._AC_UF350,350_QL80_.jpg",1,110
+7,"Pain Relief Gel","",pack,221.0,260.0,"15% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaCybESurGRkK4oNO2bcTPrEfM3GBQEuvYhg&s,1,40
+8,"Fertility Supplements","",pack,227.5,277.44,"18% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh0Xwuf3yOyUKgdV58Mh9WPao8V0wlzK-2FA&s,1,50
+9,"Women Multivitamins","",pack,234.0,300.0,"22% OFF","https://m.media-amazon.com/images/I/61vaP+V2rVL._AC_UF350,350_QL80_.jpg",1,60
+10,"Vitamin D3 Capsules","",pack,240.5,320.67,"25% OFF",https://cdn01.pharmeasy.in/dam/products_otc/J96673/genone-calgen-d3-60k-vitamin-d3-for-boosting-immunity-healthy-bones-and-strong-muscles-20-caps-2-1710155204.jpg,1,70
+5,"Calcium + Iron Combo","",pack,247.0,352.86,"30% OFF","https://m.media-amazon.com/images/I/61IOIhxPGLL._AC_UF1000,1000_QL80_.jpg",1,80
+6,"Intimate Wipes","",pack,356.0,374.74,"5% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtRs9SYgH2QbnDM2wrPywKCIHnI-mHC9MWLw&s,1,90
+7,dolo,300mg,strip,35.0,38.04,"8% OFF",https://akmedicalhall.com/wp-content/uploads/2023/05/Dolo-650-mg-1682920470-10010623-1.jpg,1,20
+8,CTZ,20MG,strip,35.0,38.89,"10% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuhffl19gTc0wsvYoY87d7eaSaUHBrov12nQ&s,1,69
+9,Dolo,650mg,strip,30.0,34.09,"12% OFF",https://akmedicalhall.com/wp-content/uploads/2023/05/Dolo-650-mg-1682920470-10010623-1.jpg,1,120
+10,"Antacid Gel","",strip,71.0,83.53,"15% OFF",https://cdn01.pharmeasy.in/dam/products_otc/255390/digene-gel-acidity-gas-relief-200ml-mint-flavour-sugar-free-2-1710939921.jpg,1,80
+5,Pantoprazole,40mg,strip,392.0,445.45,"12% OFF",https://mcareexports.com/wp-content/uploads/2021/07/Paphzole-40mg-tab-Prector-life-sciences.jpg,1,80
+6,Amoxicillin,500mg,strip,374.0,440.0,"15% OFF",https://irp.cdn-website.com/69c0b277/dms3rep/multi/Amoxicillin+-+Uses-+Side+Effects-+Composition-+Indications+and+Price.jpg,1,70
+7,Paracetamol,"",strip,95.0,100.0,"5% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGsetPRGd2yrrF1WvDTwwO1dr97izoLMZMlA&s,1,35
+8,Azithromycin,"",strip,103.0,111.96,"8% OFF",https://ipro.blob.core.windows.net/mydocuments/_doxycycline-uses.jpg,1,45
+9,Amoxicillin,"",strip,111.0,123.33,"10% OFF",https://irp.cdn-website.com/69c0b277/dms3rep/multi/Amoxicillin+-+Uses-+Side+Effects-+Composition-+Indications+and+Price.jpg,1,55
+10,Ciprofloxacin,"",strip,119.0,135.23,"12% OFF",https://www.myvitaminstore.pk/cdn/shop/files/ciproxin-500-ciprofloxacin-10-ct-314433.jpg?v=1713778256,1,65
+5,Doxycycline,"",strip,127.0,149.41,"15% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_iUd-rPAounHx_0d4GVU4jdWF3g1BzHG7GA&s,1,75
+6,Metronidazole,"",strip,356.0,434.15,"18% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkAK_4VqXVtjF4Tfj--fnQz3uLeLl1qLUIWg&s,1,85
+7,Cefixime,"",strip,143.0,183.33,"22% OFF",https://www.veeremedies.com/wp-content/uploads/2019/02/Vetrax-1-gm.jpg,1,35
+8,Ceftriaxone,"",strip,95.0,126.67,"25% OFF",https://www.biofieldpharma.com/wp-content/uploads/2023/06/BIOFIELD-OFLARGE-200-TAB-1-scaled.jpg,1,45
+9,Ofloxacin,"",strip,103.0,147.14,"30% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_PlbHOMY8sMjKVS2hGKBNOYL2ktdtLFE7KQ&s,1,55
+10,Levofloxacin,"",strip,111.0,116.84,"5% OFF",https://etimg.etb2bimg.com/photo/124776069.cms,1,65
+5,ORS,"",strip,119.0,129.35,"8% OFF",https://healthvit.com/cdn/shop/files/i4pdkvwj7dt41n4ycshk.jpg?v=1738541784,1,75
+6,"Zinc Sulphate","",strip,127.0,141.11,"10% OFF",https://5.imimg.com/data5/SELLER/Default/2020/11/FV/NR/KM/111692368/albendazole-tablet.jpg,1,85
+7,Albendazole,"",strip,135.0,153.41,"12% OFF",https://static01.nyt.com/images/2021/08/30/science/30virus-ivermectin/30virus-ivermectin-mediumSquareAt3X.jpg,1,35
+8,Ivermectin,"",strip,143.0,168.24,"15% OFF",https://www.mountainside-medical.com/cdn/shop/files/Acyclovir-200mg-Capsules-Viona-Pharmaceuticals_700x700.jpg?v=1767628835,1,45
+9,Acyclovir,"",strip,95.0,115.85,"18% OFF",https://bizimages.withfloats.com/actual/a024f50ae299477cb770cb9c369434f5.jpg,1,55
+10,Oseltamivir,"",strip,103.0,132.05,"22% OFF",https://www.alicantodrugs.com/wp-content/uploads/2023/08/Linzoid-600-Tablets.jpg,1,65
+5,Linezolid,"",strip,111.0,148.0,"25% OFF",https://fawnincor.com/wp-content/uploads/2024/11/Clinitus-300-3D.jpg,1,75
+6,Clindamycin,"",strip,119.0,170.0,"30% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScObL4D-0z6i47MvgZ1GkeCP3J4Wc32eeR6g&s,1,85
+7,Nitrofurantoin,"",strip,127.0,133.68,"5% OFF",https://wellonapharma.com/admincms/product_img/product_resize_img/rifampicin-capsules_1486621893.jpg,1,35
+8,Rifampicin,"",strip,135.0,146.74,"8% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfxCuo77KzuyM1QPBGpjayO0Pw5j8L3nSf5A&s,1,45
+9,Metformin,"",strip,188.0,208.89,"10% OFF",https://efpia.co.in/wp-content/uploads/2024/10/Glimepiride-Tablets-IP-2-MG-GLIMRIL-2-2-scaled.jpg.webp,1,55
+10,Glimepiride,"",strip,140.0,159.09,"12% OFF",https://img.lb.wbmdstatic.com/vim/live/webmd/consumer_assets/site_images/article_thumbnails/BigBead/how_insulin_works_bigbead/1800x1200_how_insulin_works_bigbead.jpg?resize=750px:*&output-quality=75,1,65
+5,Insulin,"",strip,148.0,174.12,"15% OFF",https://wonneinternational.com/wp-content/uploads/2022/10/WhatsApp-Image-2024-01-19-at-11.21.14-AM-1.jpeg,1,75
+6,Amlodipine,"",strip,156.0,190.24,"18% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWYelZV985CxdTjtBZxn8DkPx8Wc-apAsvPw&s,1,85
+7,Losartan,"",strip,338.0,433.33,"22% OFF",https://5.imimg.com/data5/SELLER/Default/2023/9/348779314/GC/IS/JD/27431841/telmisartan-80mg-tablet-telmizor-80.jpg,1,35
+8,Telmisartan,"",strip,172.0,229.33,"25% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5P_hJ2mb8sNRDCmYz8UvdKAQujhzQ8W_Ovw&s,1,45
+9,Atenolol,"",strip,180.0,257.14,"30% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwScaEK6VjIEz1fuyYftxw2hku21xRUvzVIg&s,1,55
+10,Atorvastatin,"",strip,188.0,197.89,"5% OFF",https://www.emedbucket.com/emedpro_img/uploads/product/main/STERIS_PHARMA/1702538500_1.jpeg,1,65
+5,Rosuvastatin,"",strip,140.0,152.17,"8% OFF",https://caresoul.in/cdn/shop/files/Bayer_Low_Dose_Aspirin_300_Tabs_1200x1200.jpg?v=1732950643,1,75
+6,"Aspirin (low dose)","",strip,148.0,164.44,"10% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR95ykWR1353zipEqRuHIAWonfoEtqyqNsZKw&s,1,85
+7,Clopidogrel,"",strip,224.0,254.55,"12% OFF",https://www.careformulationlabs.com/uploaded_files/hydrochlorothiazide-25-tab.jpg,1,35
+8,Hydrochlorothiazide,"",strip,164.0,192.94,"15% OFF",https://efpia.co.in/wp-content/uploads/2024/08/Amipril-2.5-with-tablet-scaled.jpg.webp,1,45
+9,Ramipril,"",strip,172.0,209.76,"18% OFF",https://maxhubpharm.com/wp-content/uploads/2024/09/1000280554.jpg,1,55
+10,Bisoprolol,"",strip,180.0,230.77,"22% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2VjORvtYw_ZtUD-O8LJHj9yo2tjI29t6MrQ&s,1,65
+5,Ezetimibe,"",strip,188.0,250.67,"25% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQy1U5eNEYFfe-NAKggbsyVgTUrrmUMwg_YA&s,1,75
+6,"Salbutamol Inhaler","",unit,120.0,171.43,"30% OFF",https://wonneinternational.com/wp-content/uploads/2025/05/FARCOLIN-PLUS-Inhalers-2.jpeg,1,85
+7,"Budesonide Inhaler","",unit,356.0,374.74,"5% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAdFQUh6gajVStuwPsJYRyHp6ZaH6I6SN-cw&s,1,35
+8,Formoterol,"",strip,136.0,147.83,"8% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJG3uMivl5JLJiKiShtPgvJbuLdgT2WuXleQ&s,1,45
+9,Montelukast,"",strip,144.0,160.0,"10% OFF",https://www.therawin.in/wp-content/uploads/2024/05/Levocetrizine-Tablet-Manufacturer-In-India.jpg,1,55
+10,Levocetirizine,"",strip,152.0,172.73,"12% OFF",https://tiimg.tistatic.com/fp/1/007/645/cetirizine-tablets-317.jpg,1,65
+5,Cetirizine,"",strip,160.0,188.24,"15% OFF",https://www.montagelabs.com/product-images/Chlorpheniramine-Maleate-Injec-1716274222.jpg,1,75
+6,Chlorpheniramine,"",strip,168.0,204.88,"18% OFF",https://cdn4.volusion.store/qxyca-qbdtq/v/vspfiles/photos/14059-2.jpg?v-cache=1657699370,1,85
+7,Theophylline,"",strip,120.0,153.85,"22% OFF",https://cpimg.tistatic.com/5446681/b/5/ambroxol-15-mg-terbutaline-1-25-mg-guaiphensin-50-mg-menthol-2-5-mg.jpeg,1,35
+8,Ambroxol,"",strip,320.0,426.67,"25% OFF",https://www.healingpharma.in/wp-content/uploads/2023/12/BROMHEXINE-SYP-.jpg,1,45
+9,Bromhexine,"",strip,136.0,194.29,"30% OFF",https://curistrelief.com/cdn/shop/files/Guaifenesin1200mg150ctRendering-compressed_1200x1200.png?v=1709775574,1,55
+10,Guaifenesin,"",strip,144.0,151.58,"5% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfWUtMxY6NHbyJcVEOg1SsIp0M15nlW2cJIg&s,1,65
+5,"Fluticasone Nasal Spray","",unit,152.0,165.22,"8% OFF",https://cdn11.bigcommerce.com/s-pimv2ff7eu/images/stencil/1280x1280/products/10593/26166/667TR__59012.1658263725.jpg?c=1,1,75
+6,Ipratropium,"",strip,160.0,177.78,"10% OFF",https://www.pets-lifestyle.com/cdn/shop/files/omnacortil50101.png?v=1746355302,1,85
+7,Prednisolone,"",strip,168.0,190.91,"12% OFF",https://bepharco.com/Data/Sites/1/Product/8773/nang-1.jpg,1,35
+8,Dextromethorphan,"",strip,120.0,141.18,"15% OFF",https://www.kabirlifescience.com/wp-content/uploads/2021/06/Noten-0.5.png,1,45
+9,Alprazolam,"",strip,188.0,229.27,"18% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLpyPR8KjeSi5-gaJWvNEVAAMcNXpcY1ctZA&s,1,55
+10,Diazepam,"",strip,196.0,251.28,"22% OFF",https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Rivotril%2C_%28clonazepam%29_2_mg%2C_pot_100_stuks.jpg/250px-Rivotril%2C_%28clonazepam%29_2_mg%2C_pot_100_stuks.jpg,1,65
+5,Clonazepam,"",strip,204.0,272.0,"25% OFF",https://wellonapharma.com/admincms/product_img/product_resize_img/escitalopram-tablets-india_1736319328.jpg,1,75
+6,Escitalopram,"",strip,212.0,302.86,"30% OFF",https://5.imimg.com/data5/SELLER/Default/2023/9/343995943/MK/PO/UH/98283251/fluoxetine-20-mg-capsule3.jpg,1,85
+7,Fluoxetine,"",strip,312.0,328.42,"5% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfgctQ20k8eNYfc_m-odG284tVAIlXC_aZxA&s,1,35
+8,Sertraline,"",strip,228.0,247.83,"8% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5LNObYb0E7g-E9RI6-8AcyBZPfa_K1xGeeQ&s,1,45
+9,Amitriptyline,"",strip,180.0,200.0,"10% OFF",https://www.careformulationlabs.com/uploaded_files/olanzapine-10-tab.jpg,1,55
+10,Olanzapine,"",strip,188.0,213.64,"12% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY3IYjxgIs3kHPv-EfdwtSEE0b4L7sDLbG4g&s,1,65
+5,Risperidone,"",strip,196.0,230.59,"15% OFF",https://tiimg.tistatic.com/fp/1/006/851/lithium-carbonate-tablets-702.jpg,1,75
+6,Lithium,"",strip,204.0,248.78,"18% OFF",https://5.imimg.com/data5/KA/TW/ZD/GLADMIN-12986585/selection-177.png,1,85
+7,"Iron Folic Acid (IFA)","",strip,224.0,287.18,"22% OFF",https://www.thehimalayanorganics.in/cdn/shop/files/Listing3_950a7463-139d-4329-99c4-37a95b158dae.jpg?v=1758951948&width=1445,1,35
+8,"Vitamin B12","",strip,150.0,200.0,"25% OFF","https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/ala/ala30202/y/37.jpg",1,45
+9,"Vitamin C","",strip,392.0,560.0,"30% OFF",https://images-cdn.ubuy.co.in/6875260837b6cf82d20e386f-nature-made-extra-strength-d3-5-000-iu.jpg,1,55
+10,"Vitamin D3","",strip,110.0,115.79,"5% OFF",https://naturesbounty.com/cdn/shop/products/002843_grande.png?v=1667506615,1,65
+5,"Calcium Tablets","",strip,118.0,128.26,"8% OFF",https://swisslifeforever.in/cdn/shop/files/Calcium_60.jpg?v=1763983189,1,75
+6,Multivitamins,"",strip,126.0,140.0,"10% OFF",https://herbalmax.in/cdn/shop/files/multivitamin_with_b12.jpg?v=1766552816,1,85
+7,"Zinc Tablets","",strip,356.0,404.55,"12% OFF","https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/now/now01522/y/72.jpg",1,35
+8,"Folic Acid","",strip,142.0,167.06,"15% OFF",https://naturesbounty.com/cdn/shop/products/085606.png?v=1667506860,1,45
+9,"Protein Supplements","",strip,150.0,182.93,"18% OFF",https://dymatize.imgix.net/production/blog/Artboard-1.jpg?ar=928%3A618&auto=format%2Ccompress&fit=crop,1,55
+10,"Omega-3 Capsules","",bottle,158.0,202.56,"22% OFF","https://m.media-amazon.com/images/I/7120o1GM1HL._AC_UF1000,1000_QL80_.jpg",1,65
+5,"Clotrimazole Cream","",tube,130.0,173.33,"25% OFF",https://5.imimg.com/data5/JV/UA/MY-8142050/clotrimazole-cream.jpg,1,75
+6,"Ketoconazole Cream","",tube,138.0,197.14,"30% OFF",https://cpimg.tistatic.com/09661454/b/4/ketoconazole-cream.jpg,1,85
+7,"Mupirocin Ointment","",tube,146.0,153.68,"5% OFF",https://images.apollo247.in/pub/media/catalog/product/B/E/BET0058_2_1.jpg,1,35
+8,"Betnovate (Betamethasone)","",strip,154.0,167.39,"8% OFF",https://rizochem.com/wp-content/uploads/2023/09/SEO.png,1,45
+9,"Calamine Lotion","",tube,162.0,180.0,"10% OFF",https://rukminim2.flixcart.com/image/480/640/xif0q/moisturizer-cream/j/m/e/200-calamine-daily-face-care-lotion-for-oil-balance-retain-original-imahbw8fd8fenjvf.jpeg?q=90,1,55
+10,"Permethrin Cream","",tube,170.0,193.18,"12% OFF",https://cmedia.cheapmedicineshop.com/media/iopt/catalog/product/cache/207e23213cf636ccdef205098cf3c8a3/p/e/permite_cream_5_30_gm_tube_with_permethrin.webp,1,65
+5,"Salicylic Acid","",strip,178.0,209.41,"15% OFF","https://m.media-amazon.com/images/I/61d22zfqoDL._AC_UF1000,1000_QL80_.jpg",1,75
+6,"Benzoyl Peroxide","",strip,130.0,158.54,"18% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPf38_-Reofbo3lj-jW4st8U-1nIxqU3U9HQ&s,1,85
+7,Isotretinoin,"",strip,180.0,230.77,"22% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTEFipsTIau6v7rSVz1UgvLercArA4Mxojtw&s,1,35
+8,Fluconazole,"",strip,146.0,194.67,"25% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp3e065mwi3LSiz5vzHMzXsBpj4AJCHLRKkA&s,1,45
+9,"Iron Syrup","",bottle,149.0,212.86,"30% OFF",https://cdn01.pharmeasy.in/dam/productsnowatermark/386586/iron-red-syrup-200ml-side-6.4-1756922217-non-watermarked.jpg,1,55
+10,"Calcium Syrup","",bottle,374.0,393.68,"5% OFF",https://www.bestbiotechindia.com/wp-content/uploads/2022/07/Calcimate-suspension.jpg,1,65
+5,"Folic Acid Tablets","",strip,165.0,179.35,"8% OFF",https://www.medibyte.in/wp-content/uploads/2019/05/FEDSO-XT-TAB-scaled.jpg,1,75
+6,Misoprostol,"",strip,173.0,192.22,"10% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-MyqFbs07E622MJc3JgLiOMNjNmQD2oEliw&s,1,85
+7,Oxytocin,"",strip,312.0,354.55,"12% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq6wbzxYGqq8j3y5QO52AQN3sxg3V15NeEug&s,1,35
+8,"Oral Contraceptive Pills","",strip,133.0,156.47,"15% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREMeo98IMKgACaz1ZmPsnFEpsWPxtdoIrwWg&s,1,45
+9,"Emergency Contraceptive (i-pill)","",strip,141.0,171.95,"18% OFF",https://wellify.in/cdn/shop/products/i-Pill-Daily-Pack-of-2.jpg?v=1674558379,1,55
+10,"Paracetamol Syrup","",bottle,149.0,191.03,"22% OFF",https://wellify.in/cdn/shop/files/i-pill-Pack-0f-02_5ca913e1-090c-467f-8ffd-fad6298c9e25.jpg?v=1710227315,1,65
+5,"Amoxicillin Syrup","",bottle,157.0,209.33,"25% OFF",https://www.biofieldpharma.com/wp-content/uploads/2024/12/BIOFIELD-IBUGIV-SUSP-1-scaled.jpg,1,75
+6,"Zinc Syrup","",bottle,165.0,235.71,"30% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tF7SHL_40LUAAEmHaO-hBykOVheZ_JSCAg&s,1,85
+7,"Ciprofloxacin Eye Drops","",unit,163.0,171.58,"5% OFF",https://www.practostatic.com/practopedia-images/v3/res-750/ciplox-e-e-drops-10ml_30697220-e00a-488f-b6bd-5f3d0041225a.JPG,1,35
+8,"Moxifloxacin Eye Drops","",unit,115.0,125.0,"8% OFF",https://www.practostatic.com/practopedia-images/v3/res-750/moxiford-eye-drops-5ml_05a80d2c-ed4c-4017-a9c8-fc395d2ccb4e.JPG,1,45
+9,"Carboxymethylcellulose Drops","",unit,123.0,136.67,"10% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMjq2eiwQ3nhuhi-4sSHxmxKo8KNJjfIVWVg&s,1,55
+10,"Timolol Eye Drops","",unit,131.0,148.86,"12% OFF",https://images.apollo247.in/pub/media/catalog/product/T/I/TIM0004_1_1.jpg,1,65
+5,"Ofloxacin Ear Drops","",unit,139.0,163.53,"15% OFF",https://www.practostatic.com/practopedia-images/v3/res-750/oflox-e-e-drops-5ml_efd13d40-23ab-4d57-9ad3-9c47b8849bc2.JPG,1,75
+6,"Xylometazoline Nasal Drops","",unit,147.0,179.27,"18% OFF",https://nilsanpharmaceuticals.in/wp-content/uploads/2024/11/xivanose.jpg,1,85
+7,Oxymetazoline,"",strip,155.0,198.72,"22% OFF",https://static.meds.cvpharmacy.in/wp-content/uploads/2024/06/1055_dbb449c7-187b-439e-b971-9fd28944876c_dbb449c7-187b-439e-b971-9fd28944876c-1.jpg,1,35
+8,"Betadine Gargle","",strip,163.0,217.33,"25% OFF",https://ik.imagekit.io/wlfr/wellness/images/products/201450-1.jpg,1,45
+9,"Ear Wax Softener Drops","",unit,115.0,164.29,"30% OFF","https://m.media-amazon.com/images/I/71tsqFYVfkL._AC_UF1000,1000_QL80_.jpg",1,55
+10,"Antihistamine Eye Drops","",unit,123.0,129.47,"5% OFF",https://m.media-amazon.com/images/I/81dcfCQKaeL.jpg,1,65
+5,"Durex Strawberry Flavour","",pack,95.0,121.79,"22% OFF",https://rukminim2.flixcart.com/image/480/640/xif0q/condom/g/c/j/-original-imagpx68vrp2fuh6.jpeg?q=90,1,60
+6,"Durex Chocolate Flavour","",pack,107.5,143.33,"25% OFF",https://rukminim2.flixcart.com/image/480/640/xif0q/condom/h/p/g/12-single-product-chocolate-01-durex-original-imahfg9sepfhfry4.jpeg?q=90,1,80
+7,"Durex Bubblegum Flavour","",pack,320.0,457.14,"30% OFF",https://m.media-amazon.com/images/I/61+cyhtcAlL.jpg,1,100
+8,"Durex Vanilla Flavour","",pack,312.0,328.42,"5% OFF",https://rukminim2.flixcart.com/image/480/480/kjabs7k0-0/condom/z/v/o/10-vanilla-popsicle-flavoured-condom-10s-1-durex-original-imafywd6wuf9btjs.jpeg?q=90,1,120
+9,"Manforce Strawberry","",pack,145.0,157.61,"8% OFF",https://cdn01.pharmeasy.in/dam/products_otc/I43880/manforce-cocktail-strawberry-vanilla-flav-condom-10s-1-1669711054.jpg,1,140
+10,"Manforce Chocolate","",pack,157.5,175.0,"10% OFF",https://rukminim2.flixcart.com/image/480/640/xif0q/condom/w/5/s/-original-imahyyx2tg5khhhs.jpeg?q=90,1,60
+5,"Manforce Banana","",pack,95.0,107.95,"12% OFF",https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA2yC0gKmN7lRobxXLyzu7pC6HNjCCYu058A&s,1,80
+6,"Manforce Orange","",pack,107.5,126.47,"15% OFF",https://m.media-amazon.com/images/I/810iUYDJ-NL.jpg,1,100
+7,"Manforce Paan Flavour","",pack,120.0,146.34,"18% OFF",https://m.media-amazon.com/images/I/71enaAk4CKL.jpg,1,120
+8,"KamaSutra Strawberry","",pack,224.0,287.18,"22% OFF",https://rukminim2.flixcart.com/image/480/640/kp2y2kw0/condom/1/4/f/10-strawberry-pleasure-flavoured-condoms-1-kamasutra-original-imag3e9zmmhgxrxe.jpeg?q=90,1,140
+9,"KamaSutra Pineapple","",pack,145.0,193.33,"25% OFF",https://rukminim2.flixcart.com/image/480/480/jykfxjk0/condom/h/w/k/10-pineapple-flavour-1-kamasutra-original-imafgzmnuzm9m5dr.jpeg?q=90,1,60
+10,"KamaSutra Mint","",pack,157.5,225.0,"30% OFF","https://m.media-amazon.com/images/I/61F0BlWPrsL._AC_UF1000,1000_QL80_.jpg",1,80
+5,"Skore Strawberry","",pack,95.0,100.0,"5% OFF",https://www.bbassets.com/media/uploads/p/l/319324_3-skore-dotted-colored-condoms-strawberry-flavored.jpg,1,100
+6,"Skore Bubblegum","",pack,107.5,116.85,"8% OFF","https://m.media-amazon.com/images/I/61ph5bmoBYL._AC_UF1000,1000_QL80_.jpg",1,120
+7,"Skore Banana","",pack,120.0,133.33,"10% OFF","https://m.media-amazon.com/images/I/71YGiLEpf-L._AC_UF1000,1000_QL80_.jpg",1,140

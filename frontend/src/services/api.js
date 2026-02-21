@@ -79,6 +79,8 @@ export const adminAPI = {
 // Support / AI endpoints
 export const supportAPI = {
   chat: (payload) => api.post('/support/chat', payload),
+  scheduleAdvice: (payload) => api.post('/support/schedule-advice', payload),
+  walkInBooking: (payload) => api.post('/support/walkin-booking', payload),
 };
 
 export default api;

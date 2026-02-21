@@ -18,6 +18,34 @@ export const SearchPage = () => {
   const [error, setError] = useState('');
   const pharmacyId = searchParams.get('pharmacy');
 
+  const loadAllProducts = async () => {
+    setLoading(true);
+    setSearched(true);
+    setError('');
+    setMessage('');
+    try {
+      let response = await medicineAPI.search('', pharmacyId);
+      let items = response.data.results || [];
+
+      // If selected pharmacy has no products, fallback to all pharmacies.
+      if (pharmacyId && items.length === 0) {
+        response = await medicineAPI.search('', null);
+        items = response.data.results || [];
+        if (items.length > 0) {
+          setMessage('No products in selected pharmacy. Showing all products from all pharmacies.');
+        }
+      }
+
+      setResults(items);
+    } catch (error) {
+      console.error('Load all failed:', error);
+      setResults([]);
+      setError('Unable to load products right now. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const performSearch = async (value) => {
     if (!value.trim()) return;
     setLoading(true);
@@ -121,6 +149,17 @@ export const SearchPage = () => {
               />
             </div>
             <Button variant="primary" size="md">Search</Button>
+            <Button
+              type="button"
+              variant="outline"
+              size="md"
+              onClick={() => {
+                setQuery('');
+                loadAllProducts();
+              }}
+            >
+              All
+            </Button>
           </div>
         </form>
         {message && (

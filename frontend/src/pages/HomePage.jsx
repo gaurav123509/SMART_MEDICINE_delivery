@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { Header, Footer, Button, AlertBox, LoadingSpinner } from '../components/common';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { Header, Footer, Button, AlertBox, LoadingSpinner, MedicineImage } from '../components/common';
 import { pharmacyAPI, medicineAPI, supportAPI } from '../services/api';
 import { addToCart } from '../utils/cart';
 import {
@@ -34,6 +34,100 @@ const supportQuickActions = [
   'Best vitamins available',
   'Help for baby care products',
 ];
+const initialServiceRequestForm = {
+  full_name: '',
+  phone: '',
+  preferred_time: '',
+  notes: '',
+};
+
+const ServiceRequestModal = ({
+  open,
+  title,
+  subtitle,
+  submitLabel,
+  formData,
+  setFormData,
+  onClose,
+  onSubmit,
+  submitting,
+  error,
+}) => {
+  if (!open) return null;
+
+  return (
+    <div className="fixed inset-0 z-[140] bg-black/45 grid place-items-center px-4">
+      <div className="w-full max-w-lg rounded-2xl border border-slate-200 bg-white p-5 shadow-2xl">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <h3 className="text-xl font-black text-slate-900">{title}</h3>
+            <p className="text-sm text-slate-600 mt-1">{subtitle}</p>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="text-sm font-bold text-slate-500 hover:text-slate-700"
+          >
+            Close
+          </button>
+        </div>
+
+        {error && <div className="mt-3"><AlertBox type="error">{error}</AlertBox></div>}
+
+        <form className="mt-4 space-y-3" onSubmit={onSubmit}>
+          <div>
+            <label className="block text-sm font-semibold text-slate-700 mb-1">Full Name</label>
+            <input
+              type="text"
+              value={formData.full_name}
+              onChange={(e) => setFormData((prev) => ({ ...prev, full_name: e.target.value }))}
+              className="w-full h-10 rounded-lg border border-slate-300 px-3 text-sm focus:outline-none focus:border-[#0a6a5b]"
+              placeholder="Enter your full name"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-semibold text-slate-700 mb-1">Phone Number</label>
+            <input
+              type="tel"
+              value={formData.phone}
+              onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
+              className="w-full h-10 rounded-lg border border-slate-300 px-3 text-sm focus:outline-none focus:border-[#0a6a5b]"
+              placeholder="10 digit mobile number"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-semibold text-slate-700 mb-1">Preferred Time</label>
+            <input
+              type="text"
+              value={formData.preferred_time}
+              onChange={(e) => setFormData((prev) => ({ ...prev, preferred_time: e.target.value }))}
+              className="w-full h-10 rounded-lg border border-slate-300 px-3 text-sm focus:outline-none focus:border-[#0a6a5b]"
+              placeholder="Example: 6 PM - 8 PM"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-semibold text-slate-700 mb-1">Notes (Optional)</label>
+            <textarea
+              rows="3"
+              value={formData.notes}
+              onChange={(e) => setFormData((prev) => ({ ...prev, notes: e.target.value }))}
+              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:border-[#0a6a5b]"
+              placeholder="Any symptoms or preference details..."
+            />
+          </div>
+          <div className="flex gap-2 pt-1">
+            <Button type="button" variant="outline" className="flex-1" onClick={onClose}>
+              Cancel
+            </Button>
+            <Button type="submit" className="flex-1" disabled={submitting}>
+              {submitting ? 'Submitting...' : submitLabel}
+            </Button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
 
 const ProductMiniCard = ({ medicine, onAdd }) => {
   const price = Number(medicine.price || 0);
@@ -42,28 +136,28 @@ const ProductMiniCard = ({ medicine, onAdd }) => {
 
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm hover:shadow-md transition animate-rise">
-      <div className="relative rounded-xl bg-slate-50 h-40 overflow-hidden flex items-center justify-center">
-        {offPercent > 0 && (
-          <span className="absolute left-2 top-2 text-[10px] font-black px-2 py-1 rounded-full bg-rose-100 text-rose-700">
-            -{offPercent}%
+      <Link to={`/medicine/${medicine.id}`} className="block">
+        <div className="relative rounded-xl bg-slate-50 h-40 overflow-hidden flex items-center justify-center">
+          {offPercent > 0 && (
+            <span className="absolute left-2 top-2 text-[10px] font-black px-2 py-1 rounded-full bg-rose-100 text-rose-700">
+              -{offPercent}%
+            </span>
+          )}
+          <span className="absolute right-2 top-2 w-7 h-7 rounded-full border border-slate-200 bg-white grid place-items-center text-slate-500">
+            <Heart className="w-3.5 h-3.5" />
           </span>
-        )}
-        <button className="absolute right-2 top-2 w-7 h-7 rounded-full border border-slate-200 bg-white grid place-items-center text-slate-500 hover:text-rose-500">
-          <Heart className="w-3.5 h-3.5" />
-        </button>
-        <img
-          src={medicine.image_url || '/medicine-placeholder.svg'}
-          alt={medicine.name}
-          className="h-full w-full object-cover"
-          loading="lazy"
-          onError={(e) => {
-            e.currentTarget.src = '/medicine-placeholder.svg';
-          }}
-        />
-      </div>
+          <MedicineImage
+            medicine={medicine}
+            alt={medicine.name}
+            className="h-full w-full object-cover"
+          />
+        </div>
+      </Link>
 
       <p className="text-xs mt-3 font-bold text-emerald-700">Rs {price.toFixed(2)}</p>
-      <h3 className="font-extrabold text-slate-900 leading-tight mt-1 line-clamp-2 min-h-[42px]">{medicine.name}</h3>
+      <Link to={`/medicine/${medicine.id}`} className="block">
+        <h3 className="font-extrabold text-slate-900 leading-tight mt-1 line-clamp-2 min-h-[42px] hover:underline">{medicine.name}</h3>
+      </Link>
       <p className="text-[11px] text-slate-500 line-clamp-1">{medicine.strength || 'General use'} • {medicine.unit || 'unit'}</p>
       <p className="text-[11px] text-slate-400 mt-1 line-through">Rs {mrp.toFixed(2)}</p>
 
@@ -81,6 +175,7 @@ const ProductMiniCard = ({ medicine, onAdd }) => {
 
 export const HomePage = () => {
   const navigate = useNavigate();
+  const supportSectionRef = useRef(null);
   const [pharmacies, setPharmacies] = useState([]);
   const [medicines, setMedicines] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -90,6 +185,14 @@ export const HomePage = () => {
   const [homeSearchQuery, setHomeSearchQuery] = useState('');
   const [aiInput, setAiInput] = useState('');
   const [aiTyping, setAiTyping] = useState(false);
+  const [showScheduleModal, setShowScheduleModal] = useState(false);
+  const [showWalkInModal, setShowWalkInModal] = useState(false);
+  const [scheduleForm, setScheduleForm] = useState(initialServiceRequestForm);
+  const [walkInForm, setWalkInForm] = useState(initialServiceRequestForm);
+  const [scheduleError, setScheduleError] = useState('');
+  const [walkInError, setWalkInError] = useState('');
+  const [scheduleSubmitting, setScheduleSubmitting] = useState(false);
+  const [walkInSubmitting, setWalkInSubmitting] = useState(false);
   const [aiMessages, setAiMessages] = useState([
     {
       role: 'ai',
@@ -97,23 +200,48 @@ export const HomePage = () => {
     },
   ]);
 
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        ({ coords }) => {
-          const { latitude, longitude } = coords;
-          setLocation({ lat: latitude, lng: longitude });
-          fetchDashboardData(latitude, longitude);
-        },
-        () => {
-          setError('Location access denied. Showing general nearby stores.');
-          fetchDashboardData();
-        }
-      );
+  const syncDeliveryLocation = (lat, lng) => {
+    const label = `${lat.toFixed(2)}, ${lng.toFixed(2)}`;
+    localStorage.setItem('deliveryLocationLabel', label);
+    window.dispatchEvent(new Event('delivery-location-updated'));
+  };
+
+  const requestCurrentLocation = ({ showStatus = false } = {}) => {
+    if (!navigator.geolocation) {
+      if (showStatus) {
+        setError('Location is not supported in this browser.');
+      }
+      fetchDashboardData();
       return;
     }
 
-    fetchDashboardData();
+    if (showStatus) {
+      setMessage('Fetching your current location...');
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        const { latitude, longitude } = coords;
+        setLocation({ lat: latitude, lng: longitude });
+        syncDeliveryLocation(latitude, longitude);
+        fetchDashboardData(latitude, longitude);
+        if (showStatus) {
+          setMessage(`Delivery location updated: ${latitude.toFixed(2)}, ${longitude.toFixed(2)}`);
+        }
+      },
+      () => {
+        if (showStatus) {
+          setError('Location access denied. Please allow location permission.');
+        } else {
+          setError('Location access denied. Showing general nearby stores.');
+        }
+        fetchDashboardData();
+      }
+    );
+  };
+
+  useEffect(() => {
+    requestCurrentLocation();
   }, []);
 
   const fetchDashboardData = async (lat, lng) => {
@@ -134,6 +262,13 @@ export const HomePage = () => {
 
   const featured = useMemo(() => medicines.slice(0, 8), [medicines]);
   const bestSellers = useMemo(() => medicines.slice(8, 16), [medicines]);
+  const spotlightMedicine = useMemo(() => {
+    const keywords = ['pain relief', 'ibuprofen', 'paracetamol', 'dolo', 'crocin'];
+    const exact = medicines.find((item) =>
+      keywords.some((keyword) => (item.name || '').toLowerCase().includes(keyword))
+    );
+    return exact || medicines[0] || null;
+  }, [medicines]);
 
   const handleAddToCart = (medicine) => {
     const result = addToCart(medicine);
@@ -142,6 +277,14 @@ export const HomePage = () => {
       return;
     }
     setMessage(`${medicine.name} added to cart`);
+  };
+
+  const handleBestSellerAdd = () => {
+    if (spotlightMedicine) {
+      handleAddToCart(spotlightMedicine);
+      return;
+    }
+    navigate('/search?q=Pain%20Relief');
   };
 
   const handleHomeSearch = (e) => {
@@ -240,8 +383,112 @@ export const HomePage = () => {
     askAi(aiInput);
   };
 
+  const focusSupport = () => {
+    supportSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const validateServiceForm = (formData) => {
+    if (!formData.full_name.trim()) {
+      return 'Full name is required.';
+    }
+    if (!/^[6-9]\d{9}$/.test(formData.phone.trim())) {
+      return 'Enter a valid 10 digit Indian mobile number.';
+    }
+    return '';
+  };
+
+  const handleScheduleAdvice = () => {
+    focusSupport();
+    setScheduleError('');
+    setShowScheduleModal(true);
+  };
+
+  const handleWalkInBooking = () => {
+    focusSupport();
+    setWalkInError('');
+    setShowWalkInModal(true);
+  };
+
+  const submitScheduleAdvice = async (e) => {
+    e.preventDefault();
+    const formError = validateServiceForm(scheduleForm);
+    if (formError) {
+      setScheduleError(formError);
+      return;
+    }
+
+    setScheduleSubmitting(true);
+    setScheduleError('');
+    try {
+      const response = await supportAPI.scheduleAdvice({
+        full_name: scheduleForm.full_name.trim(),
+        phone: scheduleForm.phone.trim(),
+        preferred_time: scheduleForm.preferred_time.trim(),
+        notes: scheduleForm.notes.trim(),
+      });
+      setMessage(response?.data?.message || 'Advice schedule request submitted.');
+      setShowScheduleModal(false);
+      setScheduleForm(initialServiceRequestForm);
+    } catch (err) {
+      setScheduleError(err?.response?.data?.message || 'Failed to submit request. Please try again.');
+    } finally {
+      setScheduleSubmitting(false);
+    }
+  };
+
+  const submitWalkInBooking = async (e) => {
+    e.preventDefault();
+    const formError = validateServiceForm(walkInForm);
+    if (formError) {
+      setWalkInError(formError);
+      return;
+    }
+
+    setWalkInSubmitting(true);
+    setWalkInError('');
+    try {
+      const response = await supportAPI.walkInBooking({
+        full_name: walkInForm.full_name.trim(),
+        phone: walkInForm.phone.trim(),
+        preferred_time: walkInForm.preferred_time.trim(),
+        notes: walkInForm.notes.trim(),
+      });
+      setMessage(response?.data?.message || 'Walk-in booking request submitted.');
+      setShowWalkInModal(false);
+      setWalkInForm(initialServiceRequestForm);
+    } catch (err) {
+      setWalkInError(err?.response?.data?.message || 'Failed to submit request. Please try again.');
+    } finally {
+      setWalkInSubmitting(false);
+    }
+  };
+
   return (
     <>
+      <ServiceRequestModal
+        open={showScheduleModal}
+        title="Schedule Personalized Advice"
+        subtitle="Share your details and preferred slot. Our pharmacist team will contact you."
+        submitLabel="Submit Schedule Request"
+        formData={scheduleForm}
+        setFormData={setScheduleForm}
+        onClose={() => setShowScheduleModal(false)}
+        onSubmit={submitScheduleAdvice}
+        submitting={scheduleSubmitting}
+        error={scheduleError}
+      />
+      <ServiceRequestModal
+        open={showWalkInModal}
+        title="Book Walk-In Guidance"
+        subtitle="Book a walk-in support slot for preventive care and yearly protection guidance."
+        submitLabel="Submit Walk-In Request"
+        formData={walkInForm}
+        setFormData={setWalkInForm}
+        onClose={() => setShowWalkInModal(false)}
+        onSubmit={submitWalkInBooking}
+        submitting={walkInSubmitting}
+        error={walkInError}
+      />
       <Header userType="customer" userName={localStorage.getItem('userName') || 'Customer'} />
       <main className="market-shell py-5">
         <section className="rounded-2xl bg-[#0a6a5b] text-white px-4 py-2 text-center text-sm font-bold animate-rise">
@@ -263,10 +510,14 @@ export const HomePage = () => {
           <div className="flex flex-col xl:flex-row xl:items-center gap-3">
             <div className="flex items-center gap-3">
               <h1 className="text-2xl md:text-3xl font-black">Pharmico</h1>
-              <div className="hidden md:flex items-center gap-2 text-sm text-emerald-100">
+              <button
+                type="button"
+                onClick={() => requestCurrentLocation({ showStatus: true })}
+                className="hidden md:flex items-center gap-2 text-sm text-emerald-100 hover:text-white transition"
+              >
                 <MapPin className="w-4 h-4" />
                 {location ? `Deliver to ${location.lat.toFixed(2)}, ${location.lng.toFixed(2)}` : 'Deliver to your location'}
-              </div>
+              </button>
             </div>
 
             <form onSubmit={handleHomeSearch} className="flex-1 grid grid-cols-1 md:grid-cols-[170px_1fr_48px] gap-2">
@@ -374,10 +625,16 @@ export const HomePage = () => {
               <section className="rounded-3xl bg-white border border-slate-200 p-4 md:p-5">
                 <div className="flex items-center justify-between gap-3 flex-wrap mb-4">
                   <h3 className="text-3xl font-black text-[#0c4f45]">Featured This Month</h3>
-                  <div className="flex gap-2 text-sm">
+                  <div className="flex gap-2 text-sm items-center">
                     {['Allergy Relief', 'Sun Protection', 'Hydration'].map((tag) => (
                       <span key={tag} className="px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 font-bold">{tag}</span>
                     ))}
+                    <Link
+                      to="/search"
+                      className="px-3 py-1.5 rounded-full bg-[#0a6a5b] text-white font-bold hover:bg-[#095546]"
+                    >
+                      See All Products
+                    </Link>
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
@@ -389,7 +646,7 @@ export const HomePage = () => {
             </div>
 
             <aside className="space-y-4">
-              <section className="rounded-3xl border border-[#caecd9] bg-gradient-to-r from-[#effbf5] to-[#def5ea] p-4">
+              <section ref={supportSectionRef} className="rounded-3xl border border-[#caecd9] bg-gradient-to-r from-[#effbf5] to-[#def5ea] p-4">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-xs uppercase tracking-[0.2em] text-[#0a6a5b] font-black">Support</p>
@@ -461,12 +718,12 @@ export const HomePage = () => {
                 <article className="rounded-2xl p-4 bg-gradient-to-br from-[#e9f8f1] to-[#d5f3e6] border border-[#caecd9]">
                   <p className="text-xs font-bold text-[#0a6a5b]">Pharmacist Consultations</p>
                   <h4 className="font-black mt-2 text-[#114438]">Get Personalized Advice</h4>
-                  <Button size="sm" className="mt-3 rounded-full">Schedule</Button>
+                  <Button size="sm" className="mt-3 rounded-full" onClick={handleScheduleAdvice}>Schedule</Button>
                 </article>
                 <article className="rounded-2xl p-4 bg-gradient-to-br from-[#fff4dd] to-[#ffe8ba] border border-[#f5deb0]">
                   <p className="text-xs font-bold text-[#8a5a00]">Walk-in Welcome</p>
                   <h4 className="font-black mt-2 text-[#6f4700]">Stay Protected All Year</h4>
-                  <Button size="sm" variant="outline" className="mt-3 rounded-full">Book</Button>
+                  <Button size="sm" variant="outline" className="mt-3 rounded-full" onClick={handleWalkInBooking}>Book</Button>
                 </article>
               </section>
 
@@ -493,9 +750,17 @@ export const HomePage = () => {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-emerald-700">Best Seller</p>
-                    <h4 className="font-black text-[#173d34] text-lg leading-tight mt-1">Extra Strength Pain Relief Tablets</h4>
-                    <p className="text-xs text-slate-600 mt-2">Fast-acting formula for pain and inflammation support.</p>
-                    <Button size="sm" className="mt-3 w-full rounded-full">Add to Cart - Rs 199</Button>
+                    <h4 className="font-black text-[#173d34] text-lg leading-tight mt-1">
+                      {spotlightMedicine?.name || 'Extra Strength Pain Relief Tablets'}
+                    </h4>
+                    <p className="text-xs text-slate-600 mt-2">
+                      {spotlightMedicine
+                        ? `${spotlightMedicine.strength || 'General'} • ${spotlightMedicine.unit || 'unit'} • Fast-acting relief support.`
+                        : 'Fast-acting formula for pain and inflammation support.'}
+                    </p>
+                    <Button size="sm" className="mt-3 w-full rounded-full" onClick={handleBestSellerAdd}>
+                      {spotlightMedicine ? `Add to Cart - Rs ${Number(spotlightMedicine.price || 0).toFixed(0)}` : 'Explore Pain Relief'}
+                    </Button>
                   </div>
                 </div>
               </section>

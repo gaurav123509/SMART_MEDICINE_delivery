@@ -8,6 +8,7 @@ import { CheckoutPage } from './pages/CheckoutPage';
 import { OrderTrackingPage } from './pages/OrderTrackingPage';
 import { SellerDashboardPage } from './pages/SellerDashboardPage';
 import { AdminDashboardPage } from './pages/AdminDashboardPage';
+import { MedicineDetailsPage } from './pages/MedicineDetailsPage';
 
 const getUserRole = () => localStorage.getItem('userRole');
 
@@ -136,6 +137,7 @@ function App() {
 
           <Route path="/home" element={<ProtectedRoute element={<HomePage />} />} />
           <Route path="/search" element={<ProtectedRoute element={<SearchPage />} />} />
+          <Route path="/medicine/:id" element={<ProtectedRoute element={<MedicineDetailsPage />} />} />
           <Route path="/cart" element={<ProtectedRoute element={<CartPage />} />} />
           <Route path="/checkout" element={<ProtectedRoute element={<CheckoutPage />} />} />
           <Route path="/orders/:id" element={<ProtectedRoute element={<OrderTrackingPage />} />} />

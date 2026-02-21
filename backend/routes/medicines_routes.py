@@ -28,13 +28,14 @@ def serialize_medicine_row(r):
     offer_percent = int(round(((mrp - price) * 100.0) / mrp)) if mrp > 0 and mrp > price else 0
     offer_text = (r['offer_text'] or '').strip() or (f"{offer_percent}% OFF" if offer_percent > 0 else "Best Price")
     image_url = (r['image_url'] or '').strip()
-    if not image_url:
+    if not image_url or image_url == '/medicine-placeholder.svg':
         image_url = build_compound_image_url(r['name'])
 
     return {
         'id': r['id'],
         'category': r['category'] or '',
         'name': r['name'],
+        'use_for': r['use_for'] or '',
         'strength': r['strength'],
         'unit': r['unit'],
         'price': price,
@@ -55,7 +56,7 @@ def search_medicines():
     pharmacy_id = request.args.get('pharmacy', type=int)
 
     base_sql = """
-        SELECT m.id, m.category, m.name, m.strength, m.unit, m.price, m.mrp, m.offer_text, m.image_url, m.available, m.stock_qty, m.pharmacy_id, p.name AS pharmacy_name
+        SELECT m.id, m.category, m.name, m.use_for, m.strength, m.unit, m.price, m.mrp, m.offer_text, m.image_url, m.available, m.stock_qty, m.pharmacy_id, p.name AS pharmacy_name
         FROM medicines m
         JOIN pharmacies p ON p.id = m.pharmacy_id
         WHERE p.is_approved = 1
@@ -130,7 +131,7 @@ def get_medicine(medicine_id):
     cur = conn.cursor()
     cur.execute(
         """
-        SELECT m.id, m.category, m.name, m.strength, m.unit, m.price, m.mrp, m.offer_text, m.image_url, m.available, m.stock_qty, m.pharmacy_id, p.name AS pharmacy_name
+        SELECT m.id, m.category, m.name, m.use_for, m.strength, m.unit, m.price, m.mrp, m.offer_text, m.image_url, m.available, m.stock_qty, m.pharmacy_id, p.name AS pharmacy_name
         FROM medicines m
         JOIN pharmacies p ON p.id = m.pharmacy_id
         WHERE m.id = ?
