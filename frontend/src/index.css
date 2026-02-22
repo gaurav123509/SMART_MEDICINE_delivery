@@ -1,20 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --ink: #0f1111;
-  --brand: #febd69;
-  --brand-dark: #f3a847;
-  --navy: #131921;
-  --navy-2: #232f3e;
-  --accent: #007185;
+  --ink: #0f172a;
+  --brand: #0f766e;
+  --brand-dark: #0b5a54;
+  --brand-soft: #ccfbf1;
+  --navy: #0b1f3a;
+  --navy-2: #102a4a;
+  --accent: #ea580c;
   --surface: #ffffff;
-  --muted: #565959;
-  --line: #d5d9d9;
-  --page: #e3e6e6;
+  --muted: #475569;
+  --line: #d9e2ec;
+  --page: #f4f8ff;
+  --hero-a: #0d9488;
+  --hero-b: #2563eb;
+  --sunset: #ff7a18;
+  --aqua: #2ec4b6;
+  --sky: #3b82f6;
+  --ice: #e0f2fe;
 }
 
 html {
@@ -22,13 +29,14 @@ html {
 }
 
 body {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Manrope', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(14, 165, 164, 0.1), transparent 34%),
-    radial-gradient(circle at top right, rgba(59, 130, 246, 0.08), transparent 32%),
+    radial-gradient(circle at 5% 0%, rgba(13, 148, 136, 0.14), transparent 34%),
+    radial-gradient(circle at 100% 0%, rgba(37, 99, 235, 0.16), transparent 38%),
+    radial-gradient(circle at 50% 100%, rgba(249, 115, 22, 0.1), transparent 42%),
     var(--page);
 }
 
@@ -37,16 +45,16 @@ a {
 }
 
 .market-shell {
-  max-width: 1500px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 14px;
+  padding: 0 16px;
 }
 
 .surface-card {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(15, 17, 17, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
 }
 
 .deal-badge {
@@ -56,8 +64,8 @@ a {
   text-transform: uppercase;
   padding: 4px 8px;
   border-radius: 999px;
-  background: #cc0c39;
-  color: #ffffff;
+  background: #ecfeff;
+  color: #0f766e;
 }
 
 .amazon-link {
@@ -65,8 +73,72 @@ a {
 }
 
 .amazon-link:hover {
-  color: #c7511f;
+  color: #c2410c;
   text-decoration: underline;
+}
+
+.brand-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.medihub-template {
+  position: relative;
+  isolation: isolate;
+}
+
+.medihub-template::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 0% 20%, rgba(59, 130, 246, 0.12), transparent 26%),
+    radial-gradient(circle at 100% 10%, rgba(46, 196, 182, 0.14), transparent 30%),
+    radial-gradient(circle at 40% 100%, rgba(255, 122, 24, 0.12), transparent 28%);
+}
+
+.mesh-hero {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(191, 219, 254, 0.24), transparent 34%),
+    radial-gradient(circle at 80% 80%, rgba(110, 231, 183, 0.2), transparent 36%),
+    linear-gradient(128deg, #041c35 0%, #0b3559 44%, #104f5d 100%);
+}
+
+.neo-panel {
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.08);
+}
+
+.glass-invert {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0d3d62;
+  background: linear-gradient(125deg, #cffafe, #dbeafe);
+  border: 1px solid #bfdbfe;
+}
+
+.chip-pill {
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  color: #0b4f73;
+  font-weight: 700;
 }
 
 @keyframes slideIn {

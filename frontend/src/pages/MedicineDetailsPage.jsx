@@ -34,7 +34,7 @@ export const MedicineDetailsPage = () => {
       setMessage(result.message);
       return;
     }
-    setMessage(`${medicine.name} added to cart`);
+    setMessage(result.message || `${medicine.name} added to cart`);
   };
 
   if (loading) {
@@ -55,7 +55,7 @@ export const MedicineDetailsPage = () => {
         <Header userType="customer" />
         <main className="market-shell py-8">
           <AlertBox type="error">{error || 'Medicine not found'}</AlertBox>
-          <Link to="/search" className="inline-block mt-4 text-sm font-bold amazon-link">
+          <Link to="/search" className="inline-block mt-4 text-sm font-bold text-cyan-700 hover:text-cyan-800">
             Back to search
           </Link>
         </main>
@@ -74,12 +74,12 @@ export const MedicineDetailsPage = () => {
         {message && <div className="mb-4"><AlertBox type="info">{message}</AlertBox></div>}
 
         <div className="mb-4">
-          <Link to="/search" className="text-sm font-bold amazon-link">← Back to Search</Link>
+          <Link to="/search" className="text-sm font-bold text-cyan-700 hover:text-cyan-800">← Back to Search</Link>
         </div>
 
-        <Card>
+        <Card className="border-cyan-100">
           <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-6">
-            <div className="rounded-xl bg-slate-100 overflow-hidden h-[320px]">
+            <div className="rounded-2xl bg-gradient-to-br from-cyan-50 to-slate-100 overflow-hidden h-[320px] border border-cyan-100">
               <MedicineImage
                 medicine={medicine}
                 alt={medicine.name}
@@ -90,7 +90,7 @@ export const MedicineDetailsPage = () => {
 
             <div>
               <p className="text-xs uppercase tracking-[0.14em] text-slate-500 font-bold">{medicine.category || 'General'}</p>
-              <h1 className="text-3xl font-black text-slate-900 mt-2">{medicine.name}</h1>
+              <h1 className="text-3xl font-black text-slate-900 mt-2 brand-heading">{medicine.name}</h1>
               <p className="text-sm text-slate-600 mt-2">
                 {medicine.strength || 'General'} • {medicine.unit || 'unit'}
               </p>
@@ -102,7 +102,7 @@ export const MedicineDetailsPage = () => {
                 <p className="text-3xl font-black text-slate-900">Rs {price.toFixed(2)}</p>
                 <p className="text-base text-slate-400 line-through">Rs {mrp.toFixed(2)}</p>
                 {Number(medicine.offer_percent || 0) > 0 && (
-                  <p className="text-sm font-bold text-emerald-700">{medicine.offer_percent}% OFF</p>
+                  <p className="text-sm font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-full px-2 py-1">{medicine.offer_percent}% OFF</p>
                 )}
               </div>
 
@@ -111,7 +111,7 @@ export const MedicineDetailsPage = () => {
                 {medicine.available ? `In stock (${medicine.stock_qty})` : 'Out of stock'}
               </p>
 
-              <div className="mt-6 flex gap-3">
+              <div className="mt-6 flex flex-wrap gap-3">
                 <Button
                   size="lg"
                   className="rounded-full"

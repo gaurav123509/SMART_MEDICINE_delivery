@@ -27,6 +27,19 @@ export const setCartItems = (items) => {
 export const clearCart = () => writeCart([]);
 
 export const addToCart = (medicine) => {
+  if (!medicine || !medicine.id) {
+    return { ok: false, message: 'Invalid medicine selected.' };
+  }
+
+  if (medicine.available === false || Number(medicine.stock_qty || 0) <= 0) {
+    return { ok: false, message: 'This medicine is currently out of stock.' };
+  }
+
+  const pharmacyId = medicine.pharmacy_id ?? medicine.pharmacyId ?? null;
+  if (!pharmacyId) {
+    return { ok: false, message: 'Pharmacy information missing for this medicine.' };
+  }
+
   const items = readCart();
   const item = {
     id: medicine.id,
@@ -34,16 +47,17 @@ export const addToCart = (medicine) => {
     strength: medicine.strength,
     unit: medicine.unit,
     price: Number(medicine.price || 0),
-    pharmacy_id: medicine.pharmacy_id,
+    pharmacy_id: pharmacyId,
     pharmacy_name: medicine.pharmacy_name || 'Nearby Pharmacy',
     quantity: 1,
+    available: medicine.available,
+    stock_qty: medicine.stock_qty,
   };
 
   if (items.length > 0 && items[0].pharmacy_id !== item.pharmacy_id) {
-    return {
-      ok: false,
-      message: 'You can add medicines from one pharmacy at a time. Clear cart to switch pharmacy.',
-    };
+    // Auto-switch cart to new pharmacy for smoother UX.
+    writeCart([item]);
+    return { ok: true, message: 'Cart switched to selected pharmacy.' };
   }
 
   const index = items.findIndex((x) => x.id === item.id);

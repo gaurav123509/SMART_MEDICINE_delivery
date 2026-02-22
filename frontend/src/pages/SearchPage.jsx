@@ -129,39 +129,65 @@ export const SearchPage = () => {
       setMessage(result.message);
       return;
     }
-    setMessage(`${medicine.name} added to cart`);
+    setMessage(result.message || `${medicine.name} added to cart`);
   };
 
   return (
     <>
       <Header userType="customer" />
-      <main className="market-shell py-6">
-        <form onSubmit={handleSearch} className="surface-card p-4 mb-5">
-          <div className="flex gap-2">
-            <div className="flex-1 relative">
-              <Search className="absolute left-3 top-3 w-5 h-5 text-slate-400" />
-              <input
-                type="text"
-                placeholder="Search medicines, wellness products, symptoms..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border rounded-md focus:outline-none focus:border-orange-500"
-              />
+      <main className="market-shell py-6 md:py-8">
+        <section className="rounded-3xl border border-cyan-200/60 bg-gradient-to-r from-[#0b1f3a] via-[#134e7f] to-[#0f766e] p-4 md:p-5 mb-5 text-white">
+          <p className="text-xs uppercase tracking-[0.2em] text-cyan-100 font-bold">Medicine Discovery</p>
+          <h1 className="text-2xl md:text-3xl font-black mt-1 brand-heading">Search by Name, Symptom, or Need</h1>
+          <p className="text-cyan-100/90 mt-1 text-sm">Fever, allergy, pain relief, vitamins, and daily care essentials.</p>
+
+          <form onSubmit={handleSearch} className="mt-4">
+            <div className="flex flex-col sm:flex-row gap-2">
+              <div className="flex-1 relative">
+                <Search className="absolute left-3 top-3 w-5 h-5 text-slate-400" />
+                <input
+                  type="text"
+                  placeholder="Search medicines, wellness products, symptoms..."
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  className="w-full h-11 pl-10 pr-4 border border-cyan-100/60 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-300 bg-white/95 text-slate-800"
+                />
+              </div>
+              <Button variant="primary" size="md" className="h-11">Search</Button>
+              <Button
+                type="button"
+                variant="outline"
+                size="md"
+                className="h-11 bg-white text-slate-800"
+                onClick={() => {
+                  setQuery('');
+                  loadAllProducts();
+                }}
+              >
+                All
+              </Button>
             </div>
-            <Button variant="primary" size="md">Search</Button>
-            <Button
-              type="button"
-              variant="outline"
-              size="md"
-              onClick={() => {
-                setQuery('');
-                loadAllProducts();
-              }}
-            >
-              All
-            </Button>
+          </form>
+
+          <div className="mt-3 flex flex-wrap gap-2">
+            {['Fever', 'Cold & Cough', 'Pain Relief', 'Baby Care', 'Vitamins'].map((chip) => (
+              <button
+                key={chip}
+                type="button"
+                onClick={() => {
+                  setQuery(chip);
+                  const nextParams = new URLSearchParams(searchParams);
+                  nextParams.set('q', chip);
+                  setSearchParams(nextParams);
+                  performSearch(chip);
+                }}
+                className="px-3 py-1.5 rounded-full bg-white/15 border border-cyan-100/40 text-xs font-semibold hover:bg-white/25 transition"
+              >
+                {chip}
+              </button>
+            ))}
           </div>
-        </form>
+        </section>
         {message && (
           <div className="mb-5">
             <AlertBox type="info">{message}</AlertBox>
@@ -176,7 +202,7 @@ export const SearchPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
           <aside className="lg:col-span-1">
             <Card>
-              <h3 className="font-extrabold text-lg flex items-center gap-2"><SlidersHorizontal className="w-4 h-4" /> Filters</h3>
+              <h3 className="font-extrabold text-lg flex items-center gap-2 text-[#0d2f56]"><SlidersHorizontal className="w-4 h-4" /> Filters</h3>
               <label className="mt-4 flex items-center gap-2 text-sm">
                 <input type="checkbox" checked={inStockOnly} onChange={(e) => setInStockOnly(e.target.checked)} />
                 In stock only
@@ -198,7 +224,7 @@ export const SearchPage = () => {
                         onClick={() => setPriceFilter(active ? 'all' : p.key)}
                         className={`text-xs rounded-full px-3 py-1.5 font-semibold ${
                           active
-                            ? 'bg-orange-500 text-white'
+                            ? 'bg-[#0f766e] text-white'
                             : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
                         }`}
                       >
@@ -214,7 +240,7 @@ export const SearchPage = () => {
           <section className="lg:col-span-3">
             {!searched ? (
               <Card className="text-center py-12">
-                <h2 className="text-2xl font-extrabold text-slate-900">Search Products Like a Marketplace</h2>
+                <h2 className="text-2xl font-extrabold text-slate-900 brand-heading">Find What You Need, Faster</h2>
                 <p className="text-slate-600 mt-2">
                   Type medicine names and compare options from nearby pharmacies.
                   {pharmacyId ? ` Filter active for pharmacy #${pharmacyId}.` : ''}
@@ -226,7 +252,7 @@ export const SearchPage = () => {
                       nextParams.delete('pharmacy');
                       setSearchParams(nextParams);
                     }}
-                    className="mt-4 text-sm font-bold amazon-link"
+                    className="mt-4 text-sm font-bold text-cyan-700 hover:text-cyan-800"
                   >
                     Clear pharmacy filter
                   </button>
@@ -236,7 +262,7 @@ export const SearchPage = () => {
               <LoadingSpinner />
             ) : visibleResults.length > 0 ? (
               <>
-                <div className="surface-card p-3 mb-4 flex items-center justify-between">
+                <div className="surface-card p-3 mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                   <p className="text-sm text-slate-600">
                     Showing <span className="font-extrabold text-slate-900">{visibleResults.length}</span> results for <span className="font-bold">"{query}"</span>
                   </p>
@@ -245,7 +271,7 @@ export const SearchPage = () => {
                     <select
                       value={sortBy}
                       onChange={(e) => setSortBy(e.target.value)}
-                      className="text-sm border rounded-md px-2 py-1.5 bg-white"
+                      className="text-sm border border-slate-300 rounded-lg px-2 py-1.5 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-300"
                     >
                       <option value="relevance">Sort: Relevance</option>
                       <option value="price_low">Price: Low to High</option>

@@ -19,13 +19,22 @@ import {
 import { Link, useNavigate } from 'react-router-dom';
 
 const categoryCards = [
-  { key: 'Everyday', emoji: '🪥', color: 'from-[#fef3c7] to-[#fde68a]' },
+  { key: 'Everyday', emoji: '🧰', color: 'from-[#fef3c7] to-[#fde68a]' },
   { key: 'Vitamins', emoji: '💊', color: 'from-[#e0f2fe] to-[#bae6fd]' },
   { key: 'First Aid', emoji: '🩹', color: 'from-[#fee2e2] to-[#fecaca]' },
   { key: 'Personal Care', emoji: '🧴', color: 'from-[#fae8ff] to-[#f5d0fe]' },
   { key: 'Women Health', emoji: '🌸', color: 'from-[#ffe4e6] to-[#fecdd3]' },
   { key: 'Baby Care', emoji: '🍼', color: 'from-[#dcfce7] to-[#bbf7d0]' },
 ];
+const defaultCategoryCard = { emoji: '💊', color: 'from-[#e0f2fe] to-[#bfdbfe]' };
+const categoryAliases = {
+  Everyday: ['everyday'],
+  Vitamins: ['vitamins', 'vitamin'],
+  'First Aid': ['firstaid', 'first aid'],
+  'Personal Care': ['personalcare', 'personal care'],
+  'Women Health': ['womenhealth', 'women health', 'women care'],
+  'Baby Care': ['babycare', 'baby care'],
+};
 
 const trustBrands = ['Garden of Life', 'vida', 'obit', 'Capsugel', 'CarePro', 'loopa', 'Pharmacy Plus'];
 const supportQuickActions = [
@@ -34,6 +43,7 @@ const supportQuickActions = [
   'Best vitamins available',
   'Help for baby care products',
 ];
+const symptomQuickFilters = ['Headache', 'Fever', 'Allergy', 'Digestion', 'Joint Pain', 'Cold & Cough', 'Skin Rash'];
 const initialServiceRequestForm = {
   full_name: '',
   phone: '',
@@ -135,9 +145,9 @@ const ProductMiniCard = ({ medicine, onAdd }) => {
   const offPercent = mrp > price ? Math.round(((mrp - price) / mrp) * 100) : 0;
 
   return (
-    <article className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm hover:shadow-md transition animate-rise">
+    <article className="rounded-2xl border border-slate-200/80 bg-white p-3 shadow-sm hover:shadow-lg transition animate-rise">
       <Link to={`/medicine/${medicine.id}`} className="block">
-        <div className="relative rounded-xl bg-slate-50 h-40 overflow-hidden flex items-center justify-center">
+        <div className="relative rounded-xl bg-gradient-to-br from-cyan-50 to-slate-50 h-40 overflow-hidden flex items-center justify-center">
           {offPercent > 0 && (
             <span className="absolute left-2 top-2 text-[10px] font-black px-2 py-1 rounded-full bg-rose-100 text-rose-700">
               -{offPercent}%
@@ -154,7 +164,7 @@ const ProductMiniCard = ({ medicine, onAdd }) => {
         </div>
       </Link>
 
-      <p className="text-xs mt-3 font-bold text-emerald-700">Rs {price.toFixed(2)}</p>
+      <p className="text-xs mt-3 font-bold text-cyan-700">Rs {price.toFixed(2)}</p>
       <Link to={`/medicine/${medicine.id}`} className="block">
         <h3 className="font-extrabold text-slate-900 leading-tight mt-1 line-clamp-2 min-h-[42px] hover:underline">{medicine.name}</h3>
       </Link>
@@ -262,6 +272,26 @@ export const HomePage = () => {
 
   const featured = useMemo(() => medicines.slice(0, 8), [medicines]);
   const bestSellers = useMemo(() => medicines.slice(8, 16), [medicines]);
+  const topSellingProducts = useMemo(() => medicines.slice(0, 4), [medicines]);
+  const earCareProducts = useMemo(() => medicines.slice(4, 8), [medicines]);
+  const eyeCareProducts = useMemo(() => medicines.slice(8, 12), [medicines]);
+  const vitaminProducts = useMemo(() => medicines.slice(12, 16), [medicines]);
+  const shopCategoryCards = useMemo(() => {
+    const normalize = (value) => (value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    return categoryCards.map((cat) => {
+      const aliases = categoryAliases[cat.key] || [cat.key.toLowerCase()];
+      const aliasSet = new Set(aliases.map(normalize));
+      const medicine = medicines.find((item) => aliasSet.has(normalize(item?.category))) || null;
+      const style = cat || defaultCategoryCard;
+      return {
+        key: cat.key,
+        emoji: style.emoji,
+        color: style.color,
+        medicine,
+      };
+    });
+  }, [medicines]);
   const spotlightMedicine = useMemo(() => {
     const keywords = ['pain relief', 'ibuprofen', 'paracetamol', 'dolo', 'crocin'];
     const exact = medicines.find((item) =>
@@ -276,7 +306,7 @@ export const HomePage = () => {
       setMessage(result.message);
       return;
     }
-    setMessage(`${medicine.name} added to cart`);
+    setMessage(result.message || `${medicine.name} added to cart`);
   };
 
   const handleBestSellerAdd = () => {
@@ -490,79 +520,93 @@ export const HomePage = () => {
         error={walkInError}
       />
       <Header userType="customer" userName={localStorage.getItem('userName') || 'Customer'} />
-      <main className="market-shell py-5">
-        <section className="rounded-2xl bg-[#0a6a5b] text-white px-4 py-2 text-center text-sm font-bold animate-rise">
-          Get Free Delivery over Rs 500
-        </section>
+      <main className="market-shell medihub-template py-5 md:py-6 space-y-4">
+        {message && <AlertBox type="info">{message}</AlertBox>}
+        {error && <AlertBox type="warning">{error}</AlertBox>}
 
-        {message && (
-          <div className="mt-4">
-            <AlertBox type="info">{message}</AlertBox>
-          </div>
-        )}
-        {error && (
-          <div className="mt-4">
-            <AlertBox type="warning">{error}</AlertBox>
-          </div>
-        )}
+        <section className="mesh-hero relative overflow-hidden rounded-[34px] border border-cyan-100/40 p-4 md:p-6 text-white shadow-[0_28px_56px_rgba(8,30,56,0.35)] animate-rise">
+          <div className="absolute -left-16 top-4 h-52 w-52 rounded-full bg-cyan-200/20 blur-3xl" />
+          <div className="absolute -right-10 bottom-0 h-44 w-44 rounded-full bg-emerald-300/20 blur-3xl" />
+          <div className="relative grid gap-4 xl:grid-cols-[1.45fr_1fr]">
+            <div>
+              <div className="section-tag text-white/95 bg-white/15 border-white/30">
+                <Sparkles className="h-3.5 w-3.5 mr-1" /> Pulse Mode
+              </div>
+              <h1 className="mt-4 text-3xl md:text-5xl font-black leading-[1.05] brand-heading">
+                Medicine discovery,
+                <br />
+                reimagined for speed.
+              </h1>
+              <p className="mt-3 max-w-2xl text-cyan-50/95 text-sm md:text-base">
+                Fresh tile-based template: clean data blocks, quick-care actions, and instant pharmacy support in one screen.
+              </p>
 
-        <section className="mt-4 rounded-3xl border border-[#cfe5df] bg-[#0d5b4f] p-3 md:p-4 text-white animate-rise">
-          <div className="flex flex-col xl:flex-row xl:items-center gap-3">
-            <div className="flex items-center gap-3">
-              <h1 className="text-2xl md:text-3xl font-black">Pharmico</h1>
-              <button
-                type="button"
-                onClick={() => requestCurrentLocation({ showStatus: true })}
-                className="hidden md:flex items-center gap-2 text-sm text-emerald-100 hover:text-white transition"
-              >
-                <MapPin className="w-4 h-4" />
-                {location ? `Deliver to ${location.lat.toFixed(2)}, ${location.lng.toFixed(2)}` : 'Deliver to your location'}
-              </button>
+              <form onSubmit={handleHomeSearch} className="mt-5 grid grid-cols-1 md:grid-cols-[165px_1fr_52px] gap-2">
+                <select className="h-11 rounded-full border border-white/35 bg-white/95 text-slate-700 px-4 text-sm font-semibold">
+                  <option>All Categories</option>
+                  <option>Medicines</option>
+                  <option>Wellness</option>
+                  <option>Personal care</option>
+                </select>
+                <input
+                  type="text"
+                  placeholder="Search by medicine, symptom, care need..."
+                  value={homeSearchQuery}
+                  onChange={(e) => setHomeSearchQuery(e.target.value)}
+                  className="h-11 rounded-full border border-white/35 bg-white/95 text-slate-700 px-4 text-sm"
+                />
+                <button className="h-11 w-11 rounded-full bg-cyan-100 text-[#0d2f56] grid place-items-center hover:bg-white transition">
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </form>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                {['Rx Upload', 'Need in 30 mins', 'Family Refill', 'Allergy Relief', 'Fever Care', 'Women Care', 'Baby Essentials'].map((chip) => (
+                  <button
+                    key={chip}
+                    type="button"
+                    onClick={() => navigate(`/search?q=${encodeURIComponent(chip)}`)}
+                    className="chip-pill px-4 py-2 text-xs md:text-sm hover:-translate-y-0.5 transition"
+                  >
+                    {chip}
+                  </button>
+                ))}
+              </div>
             </div>
 
-            <form onSubmit={handleHomeSearch} className="flex-1 grid grid-cols-1 md:grid-cols-[170px_1fr_48px] gap-2">
-              <select className="h-11 rounded-full border border-emerald-200 bg-white text-slate-700 px-4 text-sm font-semibold">
-                <option>All Categories</option>
-                <option>Medicines</option>
-                <option>Wellness</option>
-                <option>Personal care</option>
-              </select>
-              <input
-                type="text"
-                placeholder="Search for medicines, health products..."
-                value={homeSearchQuery}
-                onChange={(e) => setHomeSearchQuery(e.target.value)}
-                className="h-11 rounded-full border border-emerald-200 bg-white text-slate-700 px-4 text-sm"
-              />
-              <button className="h-11 w-11 rounded-full bg-emerald-200 text-[#0d5b4f] grid place-items-center hover:bg-emerald-100 transition">
-                <ArrowRight className="w-5 h-5" />
-              </button>
-            </form>
+            <div className="space-y-3">
+              <div className="glass-invert rounded-3xl p-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-black text-xl">Live Care Pulse</h3>
+                  <button
+                    type="button"
+                    onClick={() => requestCurrentLocation({ showStatus: true })}
+                    className="inline-flex items-center gap-1 text-xs font-bold text-cyan-100 hover:text-white"
+                  >
+                    <MapPin className="h-3.5 w-3.5" />
+                    {location ? `${location.lat.toFixed(2)}, ${location.lng.toFixed(2)}` : 'Use location'}
+                  </button>
+                </div>
+                <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
+                  <div className="rounded-xl bg-white/10 p-3"><p className="text-cyan-100">Stores</p><p className="font-black text-2xl mt-1">{pharmacies.length}</p></div>
+                  <div className="rounded-xl bg-white/10 p-3"><p className="text-cyan-100">Products</p><p className="font-black text-2xl mt-1">{medicines.length}</p></div>
+                  <div className="rounded-xl bg-white/10 p-3"><p className="text-cyan-100">Express ETA</p><p className="font-black text-2xl mt-1">20m</p></div>
+                  <div className="rounded-xl bg-white/10 p-3"><p className="text-cyan-100">Support</p><p className="font-black text-2xl mt-1">24/7</p></div>
+                </div>
+              </div>
 
-            <div className="flex items-center gap-2">
-                {[
-                { icon: HelpCircle, to: '/orders/1' },
-                { icon: Heart, to: '/search' },
-                { icon: ShoppingCart, to: '/cart' },
-              ].map(({ icon: Icon, to }, idx) => (
-                <Link key={idx} to={to} className="w-11 h-11 rounded-full border border-emerald-200 grid place-items-center hover:bg-white/10 transition">
-                  <Icon className="w-4 h-4" />
-                </Link>
-              ))}
+              <div className="glass-invert rounded-3xl p-3">
+                <div className="grid grid-cols-3 gap-2">
+                  {[{ icon: HelpCircle, to: '/orders/1', label: 'Track' }, { icon: Heart, to: '/search', label: 'Wishlist' }, { icon: ShoppingCart, to: '/cart', label: 'Cart' }].map(({ icon: Icon, to, label }) => (
+                    <Link key={label} to={to} className="rounded-2xl border border-white/25 bg-white/10 p-3 text-center hover:bg-white/20 transition">
+                      <Icon className="h-4 w-4 mx-auto" />
+                      <span className="mt-1 block text-xs font-bold">{label}</span>
+                    </Link>
+                  ))}
+                </div>
+                <p className="mt-3 text-center text-xs font-semibold text-cyan-100">Emergency basket delivered under 30 mins. Free delivery above Rs 500.</p>
+              </div>
             </div>
-          </div>
-
-          <div className="mt-3 flex flex-wrap gap-2">
-            {['Shop by Categories', 'Under 100', 'Best Selling', 'New Arrivals', 'New Offer', 'Personal Care', 'Vitamins & Supplements'].map((chip) => (
-              <button
-                key={chip}
-                type="button"
-                onClick={() => navigate(`/search?q=${encodeURIComponent(chip)}`)}
-                className="px-4 py-2 rounded-full bg-white text-[#0b4f45] text-xs md:text-sm font-bold"
-              >
-                {chip}
-              </button>
-            ))}
           </div>
         </section>
 
@@ -571,209 +615,154 @@ export const HomePage = () => {
             <LoadingSpinner />
           </div>
         ) : (
-          <section className="mt-4 grid grid-cols-1 2xl:grid-cols-3 gap-4">
-            <div className="2xl:col-span-2 space-y-4">
-              <article className="rounded-3xl bg-gradient-to-r from-[#02463d] via-[#045648] to-[#0b6a57] text-white p-6 md:p-8 overflow-hidden relative animate-rise">
-                <div className="absolute -right-20 -bottom-20 w-72 h-72 bg-emerald-300/20 rounded-full blur-2xl" />
-                <div className="relative z-10 grid md:grid-cols-2 gap-6 items-center">
-                  <div>
-                    <p className="text-xs tracking-[0.22em] uppercase text-emerald-100">Healthcare Marketplace</p>
-                    <h2 className="text-4xl md:text-5xl font-black leading-tight mt-3">Healthcare Made Simple, Safe, and Accessible</h2>
-                    <p className="mt-3 text-emerald-50 max-w-lg">Effective relief, backed by pharmacists. Find essentials, compare prices, and order in minutes.</p>
-                    <Link to="/search" className="inline-flex mt-6">
-                      <Button size="lg" className="rounded-full">Shop All <ArrowRight className="w-4 h-4 ml-1" /></Button>
-                    </Link>
-                  </div>
+          <section className="space-y-4">
+            <section className="neo-panel rounded-[30px] p-5 md:p-7">
+              <p className="text-center text-xs uppercase tracking-[0.18em] text-cyan-700 font-extrabold">Storefront</p>
+              <h2 className="text-center text-2xl md:text-3xl font-black text-[#0d2f56] mt-2 brand-heading">hii i'm Aiva</h2>
+              <form onSubmit={handleAiSubmit} className="mt-4 mx-auto max-w-3xl grid grid-cols-1 md:grid-cols-[1fr_48px] gap-2">
+                <input
+                  type="text"
+                  placeholder="Ask AI: fever medicine, order tracking, vitamins..."
+                  value={aiInput}
+                  onChange={(e) => setAiInput(e.target.value)}
+                  className="h-11 rounded-full border border-cyan-200 bg-white px-4 text-sm"
+                />
+                <button type="submit" className="h-11 w-11 rounded-full bg-[#0f766e] text-white grid place-items-center hover:bg-[#0d5f59] transition">
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </form>
+              <div className="mt-3 mx-auto max-w-3xl rounded-2xl border border-cyan-100 bg-cyan-50/70 px-4 py-3 text-sm text-[#0d2f56]">
+                {aiTyping ? 'AI is typing...' : (aiMessages[aiMessages.length - 1]?.text || 'Ask anything about medicines.')}
+              </div>
+              <div className="mt-4 flex flex-wrap justify-center gap-2">
+                {trustBrands.slice(0, 6).map((brand) => (
+                  <button
+                    key={brand}
+                    type="button"
+                    onClick={() => navigate(`/search?q=${encodeURIComponent(brand)}`)}
+                    className="chip-pill px-3 py-1.5 text-xs"
+                  >
+                    {brand}
+                  </button>
+                ))}
+              </div>
+            </section>
 
-                  <div className="rounded-2xl bg-white/10 border border-white/20 p-5">
-                    <h3 className="font-black text-xl">Live Marketplace Stats</h3>
-                    <div className="grid grid-cols-2 gap-3 mt-4 text-sm">
-                      <div className="rounded-xl bg-white/10 p-3">
-                        <p className="text-emerald-100">Nearby Stores</p>
-                        <p className="font-black text-2xl mt-1">{pharmacies.length}</p>
-                      </div>
-                      <div className="rounded-xl bg-white/10 p-3">
-                        <p className="text-emerald-100">Products</p>
-                        <p className="font-black text-2xl mt-1">{medicines.length}</p>
-                      </div>
-                      <div className="rounded-xl bg-white/10 p-3">
-                        <p className="text-emerald-100">Express ETA</p>
-                        <p className="font-black text-2xl mt-1">20m</p>
-                      </div>
-                      <div className="rounded-xl bg-white/10 p-3">
-                        <p className="text-emerald-100">Service</p>
-                        <p className="font-black text-2xl mt-1">24/7</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
+            <section className="neo-panel rounded-[30px] p-4 md:p-5">
+              <h3 className="text-center text-2xl md:text-3xl font-black text-[#0d2f56] brand-heading">Top Selling Products</h3>
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
+                {topSellingProducts.map((item) => (
+                  <ProductMiniCard key={item.id} medicine={item} onAdd={handleAddToCart} />
+                ))}
+              </div>
+            </section>
 
-              <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-                {categoryCards.map((cat) => (
+            <section className="neo-panel rounded-[28px] p-4 md:p-5">
+              <h3 className="text-center text-2xl font-black text-[#0d2f56] brand-heading">Shop by Categories</h3>
+              <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+                {shopCategoryCards.map((cat) => (
                   <button
                     key={cat.key}
                     onClick={() => navigate(`/search?q=${encodeURIComponent(cat.key)}`)}
-                    className={`rounded-2xl p-4 bg-gradient-to-br ${cat.color} border border-white/70 shadow-sm text-left hover:-translate-y-0.5 transition`}
+                    className={`rounded-2xl p-3 bg-gradient-to-br ${cat.color} border border-white/70 shadow-sm text-center hover:-translate-y-0.5 transition`}
                   >
-                    <span className="text-3xl block">{cat.emoji}</span>
+                    {cat.medicine ? (
+                      <div className="h-14 w-14 mx-auto rounded-xl bg-white/80 border border-white/70 overflow-hidden">
+                        <MedicineImage
+                          medicine={cat.medicine}
+                          alt={cat.key}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <span className="text-3xl block">{cat.emoji}</span>
+                    )}
                     <p className="font-extrabold text-[#0f172a] mt-2 text-sm leading-tight">{cat.key}</p>
                   </button>
                 ))}
-              </section>
+              </div>
+            </section>
 
-              <section className="rounded-3xl bg-white border border-slate-200 p-4 md:p-5">
-                <div className="flex items-center justify-between gap-3 flex-wrap mb-4">
-                  <h3 className="text-3xl font-black text-[#0c4f45]">Featured This Month</h3>
-                  <div className="flex gap-2 text-sm items-center">
-                    {['Allergy Relief', 'Sun Protection', 'Hydration'].map((tag) => (
-                      <span key={tag} className="px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 font-bold">{tag}</span>
-                    ))}
-                    <Link
-                      to="/search"
-                      className="px-3 py-1.5 rounded-full bg-[#0a6a5b] text-white font-bold hover:bg-[#095546]"
-                    >
-                      See All Products
-                    </Link>
-                  </div>
+            <section className="neo-panel rounded-[28px] p-4 md:p-5">
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <h3 className="text-2xl font-black text-[#0d2f56] brand-heading">Ear Care Products</h3>
+                <Link to="/search?q=Ear%20Care" className="chip-pill px-3 py-1.5 text-xs">View All</Link>
+              </div>
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
+                {earCareProducts.map((item) => (
+                  <ProductMiniCard key={item.id} medicine={item} onAdd={handleAddToCart} />
+                ))}
+              </div>
+            </section>
+
+            <section className="rounded-[24px] overflow-hidden border border-cyan-200 bg-gradient-to-r from-[#14b8a6] via-[#10b2c4] to-[#0ea5e9] px-5 py-6 md:px-8 md:py-8 text-white">
+              <div className="grid grid-cols-1 md:grid-cols-[120px_1fr_auto] items-center gap-4">
+                <div className="rounded-2xl bg-white/20 h-24 grid place-items-center">
+                  <Pill className="w-10 h-10" />
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
-                  {featured.map((item) => (
-                    <ProductMiniCard key={item.id} medicine={item} onAdd={handleAddToCart} />
-                  ))}
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.16em]">Bulk Buy & Save More</p>
+                  <p className="text-3xl font-black mt-1 brand-heading">Get Upto 25% OFF</p>
                 </div>
-              </section>
-            </div>
+                <Button className="rounded-full bg-white text-[#0d2f56] hover:bg-cyan-50" onClick={() => navigate('/search')}>
+                  Shop Now
+                </Button>
+              </div>
+            </section>
 
-            <aside className="space-y-4">
-              <section ref={supportSectionRef} className="rounded-3xl border border-[#caecd9] bg-gradient-to-r from-[#effbf5] to-[#def5ea] p-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.2em] text-[#0a6a5b] font-black">Support</p>
-                    <h4 className="text-xl font-black text-[#114438] mt-1">24/7 AI Customer Care</h4>
-                    <p className="text-sm text-[#2e5b50] mt-1">Need help with medicine selection or order tracking?</p>
-                  </div>
-                  <div className="w-12 h-12 rounded-full bg-[#0a6a5b] text-white grid place-items-center">
-                    <Stethoscope className="w-5 h-5" />
-                  </div>
+            <section className="neo-panel rounded-[28px] p-4 md:p-5">
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <h3 className="text-2xl font-black text-[#0d2f56] brand-heading">Eye Care Products</h3>
+                <Link to="/search?q=Eye%20Care" className="chip-pill px-3 py-1.5 text-xs">View All</Link>
+              </div>
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
+                {eyeCareProducts.map((item) => (
+                  <ProductMiniCard key={item.id} medicine={item} onAdd={handleAddToCart} />
+                ))}
+              </div>
+            </section>
+
+            <section className="neo-panel rounded-[28px] p-4 md:p-5">
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <h3 className="text-2xl font-black text-[#0d2f56] brand-heading">Vitamin Tablets & Spray</h3>
+                <Link to="/search?q=Vitamins" className="chip-pill px-3 py-1.5 text-xs">View All</Link>
+              </div>
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
+                {vitaminProducts.map((item) => (
+                  <ProductMiniCard key={item.id} medicine={item} onAdd={handleAddToCart} />
+                ))}
+              </div>
+            </section>
+
+            <section ref={supportSectionRef} className="neo-panel rounded-[28px] p-4 md:p-5">
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <div>
+                  <p className="section-tag">Support Desk</p>
+                  <h4 className="text-2xl font-black text-[#0d2f56] mt-1 brand-heading">Need Help Choosing?</h4>
                 </div>
-                <div className="mt-3 flex items-center gap-3 text-sm text-[#0f513f] font-bold">
-                  <Clock3 className="w-4 h-4" /> Avg response under 2 min
-                  <Sparkles className="w-4 h-4" /> Expert assistance
-                </div>
-
-                <div className="mt-3 rounded-2xl bg-white/90 border border-[#cfe5df] p-3">
-                  <div className="max-h-52 overflow-y-auto pr-1 space-y-2">
-                    {aiMessages.map((msg, idx) => (
-                      <div
-                        key={`${msg.role}-${idx}`}
-                        className={`text-xs md:text-sm px-3 py-2 rounded-2xl ${
-                          msg.role === 'user'
-                            ? 'bg-[#0a6a5b] text-white ml-6'
-                            : 'bg-[#edf8f3] text-[#114438] mr-6'
-                        }`}
-                      >
-                        {msg.text}
-                      </div>
-                    ))}
-                    {aiTyping && (
-                      <div className="text-xs md:text-sm px-3 py-2 rounded-2xl bg-[#edf8f3] text-[#114438] mr-6">
-                        AI is typing...
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {supportQuickActions.map((action) => (
-                      <button
-                        key={action}
-                        type="button"
-                        onClick={() => askAi(action)}
-                        className="text-[11px] md:text-xs font-bold px-2.5 py-1.5 rounded-full bg-[#e6f5ef] text-[#0b5d4f] hover:bg-[#d8eee5]"
-                      >
-                        {action}
-                      </button>
-                    ))}
-                  </div>
-
-                  <form onSubmit={handleAiSubmit} className="mt-3 flex items-center gap-2">
-                    <input
-                      type="text"
-                      value={aiInput}
-                      onChange={(e) => setAiInput(e.target.value)}
-                      placeholder="Ask AI: fever medicine, order tracking, vitamins..."
-                      className="flex-1 h-10 rounded-xl border border-[#cfe5df] px-3 text-sm focus:outline-none focus:border-[#0a6a5b]"
-                    />
-                    <button
-                      type="submit"
-                      className="h-10 px-4 rounded-xl bg-[#0a6a5b] text-white text-sm font-bold hover:bg-[#095546]"
-                    >
-                      Send
-                    </button>
-                  </form>
-                </div>
-              </section>
-
-              <section className="grid grid-cols-2 gap-3">
-                <article className="rounded-2xl p-4 bg-gradient-to-br from-[#e9f8f1] to-[#d5f3e6] border border-[#caecd9]">
-                  <p className="text-xs font-bold text-[#0a6a5b]">Pharmacist Consultations</p>
-                  <h4 className="font-black mt-2 text-[#114438]">Get Personalized Advice</h4>
-                  <Button size="sm" className="mt-3 rounded-full" onClick={handleScheduleAdvice}>Schedule</Button>
-                </article>
-                <article className="rounded-2xl p-4 bg-gradient-to-br from-[#fff4dd] to-[#ffe8ba] border border-[#f5deb0]">
-                  <p className="text-xs font-bold text-[#8a5a00]">Walk-in Welcome</p>
-                  <h4 className="font-black mt-2 text-[#6f4700]">Stay Protected All Year</h4>
-                  <Button size="sm" variant="outline" className="mt-3 rounded-full" onClick={handleWalkInBooking}>Book</Button>
-                </article>
-              </section>
-
-              <section className="rounded-3xl bg-white border border-slate-200 p-4">
-                <div className="flex items-center gap-2 text-[#0a6a5b] font-extrabold text-sm">
+                <div className="flex items-center gap-2 text-[#0f766e] font-extrabold text-sm">
                   <Truck className="w-4 h-4" /> Free Shipping Rs 500+
                   <ShieldCheck className="w-4 h-4 ml-2" /> Doctor Formulated
                 </div>
-              </section>
-
-              <section className="rounded-3xl bg-white border border-slate-200 p-5">
-                <h4 className="font-black text-[#114438]">Trusted Brands</h4>
-                <div className="flex flex-wrap gap-2 mt-3">
-                  {trustBrands.map((brand) => (
-                    <span key={brand} className="px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">{brand}</span>
-                  ))}
-                </div>
-              </section>
-
-              <section className="rounded-3xl bg-[#f8f2e9] border border-[#ecddc8] p-4">
-                <div className="grid grid-cols-[110px_1fr] gap-4 items-center">
-                  <div className="rounded-2xl bg-white h-28 grid place-items-center">
-                    <Pill className="w-10 h-10 text-[#0a6a5b]" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-emerald-700">Best Seller</p>
-                    <h4 className="font-black text-[#173d34] text-lg leading-tight mt-1">
-                      {spotlightMedicine?.name || 'Extra Strength Pain Relief Tablets'}
-                    </h4>
-                    <p className="text-xs text-slate-600 mt-2">
-                      {spotlightMedicine
-                        ? `${spotlightMedicine.strength || 'General'} • ${spotlightMedicine.unit || 'unit'} • Fast-acting relief support.`
-                        : 'Fast-acting formula for pain and inflammation support.'}
-                    </p>
-                    <Button size="sm" className="mt-3 w-full rounded-full" onClick={handleBestSellerAdd}>
-                      {spotlightMedicine ? `Add to Cart - Rs ${Number(spotlightMedicine.price || 0).toFixed(0)}` : 'Explore Pain Relief'}
-                    </Button>
-                  </div>
-                </div>
-              </section>
-
-              <section className="rounded-3xl bg-white border border-slate-200 p-4">
-                <h3 className="text-3xl font-black text-[#0c4f45]">Our Best Sellers</h3>
-                <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {bestSellers.slice(0, 4).map((item) => (
-                    <ProductMiniCard key={item.id} medicine={item} onAdd={handleAddToCart} />
-                  ))}
-                </div>
-              </section>
-            </aside>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {supportQuickActions.map((action) => (
+                  <button
+                    key={action}
+                    type="button"
+                    onClick={() => askAi(action)}
+                    className="chip-pill px-3 py-1.5 text-xs"
+                  >
+                    {action}
+                  </button>
+                ))}
+                <Button size="sm" className="rounded-full" onClick={handleScheduleAdvice}>Schedule Advice</Button>
+                <Button size="sm" variant="outline" className="rounded-full" onClick={handleWalkInBooking}>Book Walk-In</Button>
+                <Button size="sm" variant="outline" className="rounded-full" onClick={handleBestSellerAdd}>
+                  {spotlightMedicine ? `Add ${spotlightMedicine.name}` : 'Explore Best Seller'}
+                </Button>
+              </div>
+            </section>
           </section>
         )}
       </main>

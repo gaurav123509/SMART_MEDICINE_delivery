@@ -47,7 +47,14 @@ export const CheckoutPage = () => {
   const deliveryCharge = deliveryType === 'express' ? 30 : 0;
   const tax = Math.round(subtotal * 0.05);
   const total = subtotal + deliveryCharge + tax + distanceSurcharge;
-  const isSatnaAddress = (address) => address.toLowerCase().includes('satna');
+
+  const normalizePhone = (value) => {
+    const digits = (value || '').replace(/\D/g, '');
+    if (digits.length === 10) return digits;
+    if (digits.length === 12 && digits.startsWith('91')) return digits.slice(2);
+    if (digits.length > 10) return digits.slice(-10);
+    return digits;
+  };
 
   useEffect(() => {
     if (!primaryPharmacyId) {
@@ -127,8 +134,7 @@ export const CheckoutPage = () => {
   const validateAddress = () => {
     const normalizedAddress = formData.address.trim();
     if (!normalizedAddress) return 'Address is required';
-    if (!isSatnaAddress(normalizedAddress)) return 'Currently delivery is available only in Satna district.';
-    if (!/^\d{10}$/.test(formData.phone)) return 'Enter valid 10 digit phone';
+    if (!/^\d{10}$/.test(normalizePhone(formData.phone))) return 'Enter valid 10 digit phone';
     return '';
   };
 
@@ -162,7 +168,7 @@ export const CheckoutPage = () => {
         pharmacy_id: cartItems[0].pharmacy_id,
         is_express: deliveryType === 'express',
         delivery_address: formData.address.trim(),
-        customer_phone: formData.phone.trim(),
+        customer_phone: normalizePhone(formData.phone),
         customer_lat: customerLocation?.lat ?? null,
         customer_lng: customerLocation?.lng ?? null,
         items: cartItems.map((item) => ({
@@ -189,7 +195,7 @@ export const CheckoutPage = () => {
     return (
       <>
         <Header userType="customer" />
-        <main className="container mx-auto px-4 py-12 max-w-xl">
+        <main className="market-shell py-12 max-w-xl">
           <AlertBox type="warning">
             Cart is empty. <Link to="/search" className="font-bold">Search medicines</Link> and add items first.
           </AlertBox>
@@ -202,9 +208,12 @@ export const CheckoutPage = () => {
   return (
     <>
       <Header userType="customer" />
-      <main className="container mx-auto px-4 py-8">
+      <main className="market-shell py-8">
         <div className="max-w-2xl mx-auto">
-          <h1 className="text-3xl font-bold mb-8">Checkout</h1>
+          <div className="mb-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-slate-500 font-bold">Secure Order Flow</p>
+            <h1 className="text-3xl font-black mt-1 brand-heading">Checkout</h1>
+          </div>
 
           {error && <AlertBox type="error">{error}</AlertBox>}
 
@@ -213,54 +222,54 @@ export const CheckoutPage = () => {
               <div
                 key={s}
                 className={`flex-1 h-2 rounded-full transition ${
-                  ['address', 'payment', 'confirm'].indexOf(step) >= idx ? 'bg-blue-600' : 'bg-gray-300'
+                  ['address', 'payment', 'confirm'].indexOf(step) >= idx ? 'bg-gradient-to-r from-[#0f766e] to-[#0284c7]' : 'bg-slate-300'
                 }`}
               />
             ))}
           </div>
 
           {step === 'address' && (
-            <Card>
-              <h2 className="text-2xl font-bold mb-6">Delivery Address</h2>
+            <Card className="border-cyan-100">
+              <h2 className="text-2xl font-black mb-6 text-[#0d2f56]">Delivery Address</h2>
               <div className="space-y-4 mb-6">
                 <div>
-                  <label className="block font-semibold mb-2">Full Address *</label>
+                  <label className="block font-semibold mb-2 text-slate-700">Full Address *</label>
                   <textarea
                     name="address"
                     value={formData.address}
                     onChange={handleInputChange}
                     rows="3"
                     placeholder="Enter your complete address..."
-                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-600"
+                    className="w-full px-4 py-2.5 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:border-cyan-500"
                   />
-                  <p className="text-sm text-gray-500 mt-2">
-                    Delivery service is currently active only in Satna district.
+                  <p className="text-sm text-slate-500 mt-2">
+                    Enter complete address for accurate delivery.
                   </p>
                 </div>
                 <div>
-                  <label className="block font-semibold mb-2">Phone Number *</label>
+                  <label className="block font-semibold mb-2 text-slate-700">Phone Number *</label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder="9999999999"
-                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-600"
+                    className="w-full px-4 py-2.5 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:border-cyan-500"
                   />
                 </div>
-                <div className="rounded-lg border p-3 bg-slate-50">
+                <div className="rounded-xl border border-cyan-100 p-3 bg-cyan-50/50">
                   <p className="font-semibold text-sm mb-2">Share Current Location (Optional)</p>
                   <Button type="button" variant="outline" size="sm" onClick={handleShareLocation} disabled={sharingLocation}>
                     {sharingLocation ? 'Fetching location...' : 'Share My Location'}
                   </Button>
-                  {locationStatus && <p className="text-xs text-gray-600 mt-2">{locationStatus}</p>}
+                  {locationStatus && <p className="text-xs text-slate-600 mt-2">{locationStatus}</p>}
                   {customerLocation && (
                     <p className="text-xs text-emerald-700 mt-1">
                       Location: {customerLocation.lat.toFixed(5)}, {customerLocation.lng.toFixed(5)}
                     </p>
                   )}
                   {distanceKm !== null && (
-                    <p className="text-xs text-gray-700 mt-1">
+                    <p className="text-xs text-slate-700 mt-1">
                       Distance from medical: {distanceKm} km
                       {distanceSurcharge > 0
                         ? ` (More than ${DISTANCE_SURCHARGE_THRESHOLD_KM} km, Rs ${DISTANCE_SURCHARGE_AMOUNT} extra)`
@@ -276,15 +285,22 @@ export const CheckoutPage = () => {
           )}
 
           {step === 'payment' && (
-            <Card>
-              <h2 className="text-2xl font-bold mb-6">Payment Method</h2>
+            <Card className="border-cyan-100">
+              <h2 className="text-2xl font-black mb-6 text-[#0d2f56]">Payment Method</h2>
               <div className="space-y-3 mb-6">
                 {[
                   { value: 'cod', label: 'Cash on Delivery' },
                   { value: 'upi', label: 'UPI (Google Pay, PhonePe)' },
                   { value: 'card', label: 'Credit/Debit Card' },
                 ].map((method) => (
-                  <label key={method.value} className="flex items-center gap-3 p-3 border rounded-lg cursor-pointer hover:bg-blue-50">
+                  <label
+                    key={method.value}
+                    className={`flex items-center gap-3 p-3 border rounded-xl cursor-pointer transition ${
+                      formData.paymentMethod === method.value
+                        ? 'border-cyan-400 bg-cyan-50'
+                        : 'border-slate-200 hover:bg-slate-50'
+                    }`}
+                  >
                     <input type="radio" name="paymentMethod" value={method.value} checked={formData.paymentMethod === method.value} onChange={handleInputChange} />
                     <span className="font-semibold">{method.label}</span>
                   </label>
@@ -298,40 +314,40 @@ export const CheckoutPage = () => {
           )}
 
           {step === 'confirm' && (
-            <Card>
-              <h2 className="text-2xl font-bold mb-6">Review Order</h2>
+            <Card className="border-cyan-100">
+              <h2 className="text-2xl font-black mb-6 text-[#0d2f56]">Review Order</h2>
               <div className="space-y-4">
                 <div className="flex justify-between pb-4 border-b">
-                  <span className="text-gray-600">Items:</span>
+                  <span className="text-slate-600">Items:</span>
                   <span className="font-semibold">{cartItems.length}</span>
                 </div>
                 <div className="flex justify-between pb-4 border-b">
-                  <span className="text-gray-600">Payment:</span>
+                  <span className="text-slate-600">Payment:</span>
                   <span className="font-semibold capitalize">{formData.paymentMethod}</span>
                 </div>
                 <div className="flex justify-between pb-4 border-b">
-                  <span className="text-gray-600">Delivery:</span>
+                  <span className="text-slate-600">Delivery:</span>
                   <span className="font-semibold capitalize">{deliveryType}</span>
                 </div>
                 {distanceKm !== null && (
                   <div className="flex justify-between pb-4 border-b">
-                    <span className="text-gray-600">Distance from Medical:</span>
+                    <span className="text-slate-600">Distance from Medical:</span>
                     <span className="font-semibold">{distanceKm} km</span>
                   </div>
                 )}
                 <div className="flex justify-between pb-4 border-b">
-                  <span className="text-gray-600">Distance Charge ({'>'}{DISTANCE_SURCHARGE_THRESHOLD_KM} km):</span>
+                  <span className="text-slate-600">Distance Charge ({'>'}{DISTANCE_SURCHARGE_THRESHOLD_KM} km):</span>
                   <span className="font-semibold">Rs {distanceSurcharge}</span>
                 </div>
                 {quantityDiscount > 0 && (
                   <div className="flex justify-between pb-4 border-b">
-                    <span className="text-gray-600">Quantity Discount:</span>
+                    <span className="text-slate-600">Quantity Discount:</span>
                     <span className="font-semibold text-emerald-700">- Rs {quantityDiscount}</span>
                   </div>
                 )}
                 <div className="flex justify-between text-lg font-bold">
                   <span>Total:</span>
-                  <span className="text-blue-600">Rs {total}</span>
+                  <span className="text-cyan-700">Rs {total}</span>
                 </div>
               </div>
               <div className="mt-6 flex gap-3">
